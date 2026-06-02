@@ -1,5 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/nullmake/calm-dotnet/documents.yml?branch=main&label=Docs)](https://nullmake.github.io/calm-dotnet/)
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/nullmake/calm-dotnet/documents.yml?label=Docs)](https://nullmake.github.io/calm-dotnet/)
 
 <div align="center">
     <picture>
