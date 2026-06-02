@@ -1,13 +1,7 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![GitHub Actions](https://img.shields.io/github/actions/workflow/status/nullmake/calm-dotnet/documents.yml?label=Docs)](https://nullmake.github.io/calm-dotnet/)
 
-<div align="center">
-    <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./documents/images/calm-logo-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./documents/images/calm-logo-light.svg">
-    <img alt="CALM Logo" src="./documents/images/calm-logo-light.svg" width="450">
-    </picture>
-</div>
+![CALM Logo](./documents/images/calm-logo-light.svg)
 
 # CALM
 
@@ -27,38 +21,10 @@ By ensuring single-threaded execution within a dedicated context, CALM structura
 
 ## 📦 Packages
 
-<table>
-    <tr>
-        <th>Package</th>
-        <th>Nuget</th>
-    </tr>
-    <tr>
-        <td>
-            <strong>Calm.Core</strong><br />
-            <div style="font-size: 0.8em; opacity: 0.7;">
-                The core high-performance execution engine and messaging abstractions.
-            </div>
-        </td>
-        <td>
-            <a href="https://www.nuget.org/packages/Calm.Core">
-                <img src="https://img.shields.io/nuget/v/Calm.Core" alt="Nuget" />
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Calm.Extensions.DependencyInjection</strong><br />
-            <div style="font-size: 0.8em; opacity: 0.7;">
-                Seamless integration with <code>Microsoft.Extensions.DependencyInjection</code>.
-            </div>
-        </td>
-        <td>
-            <a href="https://www.nuget.org/packages/Calm.Extensions.DependencyInjection">
-                <img src="https://img.shields.io/nuget/v/Calm.Extensions.DependencyInjection" alt="Nuget" />
-            </a>
-        </td>
-    </tr>
-</table>
+| Package | Nuget |
+| :------ | :---- |
+|**Calm.Core**<br/>The core high-performance execution engine and messaging abstractions.|[![NuGet](https://img.shields.io/nuget/v/Calm.Core)](https://www.nuget.org/packages/Calm.Core)|
+|**Calm.Extensions.DependencyInjection**<br/>Seamless integration with `Microsoft.Extensions.DependencyInjection`.|[![NuGet](https://img.shields.io/nuget/v/Calm.Extensions.DependencyInjection)](https://www.nuget.org/packages/Calm.Extensions.DependencyInjection)|
 
 ## 📦 Installation
 
