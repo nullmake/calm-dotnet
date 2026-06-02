@@ -1,0 +1,4 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\Polyfills\Polyfills.projitems" Label="Shared" />
+  <Import Project="../Shared.Analyzer.props" />
+</Project>

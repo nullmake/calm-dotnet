@@ -1,0 +1,169 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Application-specific settings -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net10.0-windows10.0.19041.0</TargetFrameworks>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' and '$(TargetFrameworkIdentifier)' == '.NETFramework'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' and '$(TargetFrameworkIdentifier)' != '.NETFramework'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <!-- MinVer configuration -->
+  <PropertyGroup>
+    <MinVerTagPrefix>$(MSBuildProjectName)/v</MinVerTagPrefix>
+  </PropertyGroup>
+
+  <!-- Assembly metadata -->
+  <PropertyGroup>
+    <Authors>nullmake</Authors>
+    <Copyright>Copyright 2026 CALM Project</Copyright>
+  </PropertyGroup>
+
+  <!-- Deterministic Build -->
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <Deterministic>true</Deterministic>
+    <SlnRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</SlnRoot>
+    <PathMap>$(SlnRoot)=/_/</PathMap>
+  </PropertyGroup>
+
+  <!-- Import Analyzer rules -->
+  <ItemGroup>
+    <GlobalAnalyzerConfigFiles Include="$(MSBuildThisFileDirectory)..\..\source\.analyzer\dotnet.sdk.10.0.201.globalconfig" />
+    <GlobalAnalyzerConfigFiles Include="$(MSBuildThisFileDirectory)..\..\source\.analyzer\meziantou.analyzer.3.0.44.globalconfig" />
+    <GlobalAnalyzerConfigFiles Include="$(MSBuildThisFileDirectory)..\..\source\.analyzer\microsoft.visualstudio.threading.analyzers.17.14.15.globalconfig" />
+    <GlobalAnalyzerConfigFiles Include="$(MSBuildThisFileDirectory)..\..\source\.analyzer\roslynator.analyzers.4.15.0.globalconfig" />
+    <GlobalAnalyzerConfigFiles Include="$(MSBuildThisFileDirectory)..\..\source\.analyzer\sonaranalyzer.csharp.10.22.0.136894.globalconfig" />
+    <GlobalAnalyzerConfigFiles Include="$(MSBuildThisFileDirectory)..\..\source\.analyzer\StyleCop.Analyzers.globalconfig" />
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)..\..\source\.analyzer\StyleCop.json" Visible="false" />
+  </ItemGroup>
+
+  <!-- Suppress rule IDs -->
+  <PropertyGroup>
+    <!-- ## Performance does not need to be considered when generating test logs. -->
+    <!--    - "Performance", "CA1848:Use the LoggerMessage delegates" -->
+    <!--    - "Performance", "CA1873:Avoid potentially expensive logging" -->
+    <NoWarn>$(NoWarn);CA1848;CA1873</NoWarn>
+  </PropertyGroup>
+
+  <!-- Publish settings -->
+  <PropertyGroup>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+
+  <!-- Assembly attributes -->
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.InteropServices.ComVisibleAttribute">
+      <_Parameter1>false</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.CLSCompliantAttribute">
+      <_Parameter1>false</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <!-- Dependencies -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\source\src\Calm.Core\Calm.Core.csproj" />
+    <ProjectReference Include="..\..\source\src\Calm.Analyzers\Calm.Analyzers.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\source\src\Calm.Extensions.DependencyInjection\Calm.Extensions.DependencyInjection.csproj" />
+  </ItemGroup>
+
+  <!-- NuGet Packages -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.7" />
+    <!--
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.15.3" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.15.3" />
+    -->
+    <PackageReference Include="ReactiveMarbles.ObservableEvents.SourceGenerator" Version="1.3.1" />
+    <PackageReference Include="ReactiveUI.SourceGenerators" Version="2.6.30">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="ReactiveUI.Validation" Version="7.0.5" />
+    <PackageReference Include="ReactiveUI.WinForms" Version="23.2.27" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="10.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+    <PackageReference Include="SharpCompress" Version="0.48.0" />
+    <PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="19.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MinVer" Version="7.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Meziantou.Analyzer" Version="3.0.48">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.14.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Roslynator.Analyzers" Version="4.15.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.23.0.137933">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+    <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="5.0.0" />
+  </ItemGroup>
+
+  <!-- ============= -->
+  <!--    Targets    -->
+  <!-- ============= -->
+  <!-- Removes publish directory -->
+  <Target Name="RemovePublishFolder" BeforeTargets="PrepareForPublish">
+    <Message Importance="high" Text="$(MSBuildProjectName) -&gt; Removes Publish directory: $(PublishDir)" />
+    <RemoveDir Directories="$(PublishDir)" ContinueOnError="true" />
+  </Target>
+
+  <!-- Generates compliance files -->
+  <Target Name="AddComplianceFiles" AfterTargets="Publish" Condition="'$(IsPackable)' == 'true'">
+    <PropertyGroup>
+      <SbomFileName>manifest.cyclonedx.json</SbomFileName>
+      <NoticesFileName>ThirdPartyNotices.html</NoticesFileName>
+    </PropertyGroup>
+
+    <!-- Copy LICENSE -->
+    <Copy SourceFiles="../../LICENSE" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="true" />
+
+    <!-- Install CycloneDX dotnet tool -->
+    <Exec Command="dotnet tool install CycloneDX" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" />
+
+    <!-- Generate CycloneDX SBOM -->
+    <Message Importance="high" Text="$(MSBuildProjectName) -&gt; Generate CycloneDX SBOM: $(TargetFramework)" />
+    <Exec Command="dotnet CycloneDX $(MSBuildProjectFullPath) -o $(PublishDir) -tfm $(TargetFramework) -fn $(SbomFileName) -rs -ed -sv $(PackageVersion)" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" />
+
+    <!-- Install SbomToNotice dotnet tool -->
+    <Exec Command="dotnet tool install SbomToNotice" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" />
+
+    <!-- Generate Third-Party Notices -->
+    <Message Importance="high" Text="Creating Third-Party Notices" />
+    <Exec Command="dotnet SbomToNotice $(PublishDir)$(SbomFileName) -o $(PublishDir)$(NoticesFileName) --ofmt Html" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" />
+  </Target>
+
+</Project>

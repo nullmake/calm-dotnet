@@ -1,0 +1,77 @@
+<Window x:Class="Sample04.Views.MainWindow" x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:conv="clr-namespace:Sample04.Views.Converters"
+        xmlns:vm="clr-namespace:Sample04.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance {x:Type vm:MainViewModel}}"
+        SizeToContent="Height" Width="250" ResizeMode="NoResize" WindowStyle="ToolWindow">
+    <Window.Resources>
+        <conv:HumanReadableByteSizeConverter x:Key="HumanReadableByteSizeConverter" />
+    </Window.Resources>
+    <Window.Title>
+        <MultiBinding StringFormat="{}{0} - v{1}">
+            <Binding Path="ApplicationName" FallbackValue="AppName" />
+            <Binding Path="ApplicationVersion" FallbackValue="0.0.0.0" />
+        </MultiBinding>
+    </Window.Title>
+    <StackPanel Margin="8">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Sampling speed: " />
+            <TextBox MinWidth="50" TextAlignment="Right" d:Text="1"
+                     Text="{Binding SamplingPeriod,
+                                    UpdateSourceTrigger=PropertyChanged, Delay=1000,
+                                    ValidatesOnExceptions=True}" />
+            <TextBlock Margin="3 0 0 0" Text="[sec]" />
+        </StackPanel>
+        <GroupBox Header="Process Information">
+            <Grid Margin="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="CPU" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Text=" :  " />
+                <TextBlock Grid.Row="0" Grid.Column="2" TextAlignment="Right" d:Text="12.03%"
+                           Text="{Binding CpuUsage, StringFormat={}{0:0.00}%}" />
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Private Bytes" />
+                <TextBlock Grid.Row="1" Grid.Column="1" Text=" :  " />
+                <TextBlock Grid.Row="1" Grid.Column="2" TextAlignment="Right" d:Text="50.46MB"
+                           Text="{Binding PrivateBytes, Converter={StaticResource HumanReadableByteSizeConverter}}" />
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Working Set" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Text=" :  " />
+                <TextBlock Grid.Row="2" Grid.Column="2" TextAlignment="Right" d:Text="100MB"
+                           Text="{Binding WorkingSet, Converter={StaticResource HumanReadableByteSizeConverter}}" />
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Virtual Memory" />
+                <TextBlock Grid.Row="3" Grid.Column="1" Text=" :  " />
+                <TextBlock Grid.Row="3" Grid.Column="2" TextAlignment="Right" d:Text="10.93GB"
+                           Text="{Binding VirtualMermory, Converter={StaticResource HumanReadableByteSizeConverter}}" />
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="GC Heap" />
+                <TextBlock Grid.Row="4" Grid.Column="1" Text=" :  " />
+                <TextBlock Grid.Row="4" Grid.Column="2" TextAlignment="Right" d:Text="1.24GB"
+                           Text="{Binding GcHeapSize, Converter={StaticResource HumanReadableByteSizeConverter}}" />
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Handle" />
+                <TextBlock Grid.Row="5" Grid.Column="1" Text=" :  " />
+                <TextBlock Grid.Row="5" Grid.Column="2" TextAlignment="Right" d:Text="44"
+                           Text="{Binding HandleCount}" />
+            </Grid>
+        </GroupBox>
+    </StackPanel>
+</Window>

@@ -1,0 +1,41 @@
+# top-most EditorConfig file
+root = true
+
+#-------------------------------------------------
+# file format
+#-------------------------------------------------
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{cs,csx}]
+indent_size = 4
+
+[*.{sln,slnx,csproj,props,targets}]
+indent_size = 2
+
+[*.{json,yml,yaml}]
+indent_size = 2
+
+[*.{html,css}]
+indent_size = 2
+
+#-------------------------------------------------
+# spell checker
+#-------------------------------------------------
+[*]
+# spelling_languages = en-us
+# spelling_checkable_types = identifiers,comments
+spelling_error_severity = suggestion
+spelling_exclusion_path = ./source/exclusion.dic
+# spelling_use_default_exclusion_dictionary = false
+
+#-------------------------------------------------
+# style rules
+#-------------------------------------------------
+[*.{cs,vb}]
+csharp_style_namespace_declarations=file_scoped:suggestion

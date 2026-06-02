@@ -1,0 +1,13 @@
+#-----------------------
+# DocFX
+#-----------------------
+# The final HTML website static output directory
+_site/
+
+# The intermediate metadata cache directory (contains generated .yml files)
+api/
+
+# Manifest files and local server caches
+*.manifest
+.manifest
+.lock.json

@@ -1,0 +1,1186 @@
+
+# StyleCop.Analyzers, Version=1.1.118.34620, Culture=neutral, PublicKeyToken=cfeb5dbada5e1c25
+
+# Top level entry required to mark this as a global AnalyzerConfig file
+is_global = true
+
+#------------|------------------------------------------------------------------------------------------------------------------
+# Severity   | Build-time behavior
+#------------|------------------------------------------------------------------------------------------------------------------
+# error      | Violations appear as build errors and cause builds to fail.
+#------------|------------------------------------------------------------------------------------------------------------------
+# warning    | Violations appear as build warnings but do not cause builds to fail
+#            | (unless you have an option set to treat warnings as errors).
+#------------|------------------------------------------------------------------------------------------------------------------
+# suggestion | Violations appear as build messages and as suggestions in the Visual Studio IDE.
+#            | (In Visual Studio, suggestions appear as three gray dots under the first two characters.)
+#------------|------------------------------------------------------------------------------------------------------------------
+# silent     | Violations aren't visible to the user.
+#            | However, for code-style rules, Visual Studio code-generation features still generate code in this style.
+#            | These rules also participate in cleanup and appear in the Quick Actions and Refactorings menu in Visual Studio.
+#------------|------------------------------------------------------------------------------------------------------------------
+# none       | Rule is suppressed completely.
+#            | However, for code-style rules, Visual Studio code-generation features still generate code in this style.
+#------------|------------------------------------------------------------------------------------------------------------------
+# default    | The default severity of the rule is used.
+#            | The default severities for each .NET release are listed in the dotnet/sdk repo. In that table,
+#            | "Disabled" corresponds to none, "Hidden" corresponds to silent, and "Info" corresponds to suggestion.
+#------------|------------------------------------------------------------------------------------------------------------------
+
+# [SuppressMessage("StyleCop.CSharp.SpecialRules", "SA0001:XML comment analysis disabled", Justification = "<Pending>")]
+# description: XML comment analysis can only be performed when the project is configured to parse documentation comments. To enable this functionality, update the project to produce an XML documentation file as part of the build.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA0001.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpecialRules", "SA0002:Invalid settings file", Justification = "<Pending>")]
+# description: Various errors in the stylecop.json file can prevent the file from being loaded by the analyzers. In this case, the default settings are used instead.  {0}
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA0002.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1000:Keywords should be spaced correctly", Justification = "<Pending>")]
+# description: The spacing around a C# keyword is incorrect.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1000.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "<Pending>")]
+# description: The spacing around a comma is incorrect, within a C# code file.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1001.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1002:Semicolons should be spaced correctly", Justification = "<Pending>")]
+# description: The spacing around a semicolon is incorrect, within a C# code file.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1002.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1003:Symbols should be spaced correctly", Justification = "<Pending>")]
+# description: The spacing around an operator symbol is incorrect, within a C# code file.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1003.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1004:Documentation lines should begin with single space", Justification = "<Pending>")]
+# description: A line within a documentation header above a C# element does not begin with a single space.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1004.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1005:Single line comments should begin with single space", Justification = "<Pending>")]
+# description: A single-line comment within a C# code file does not begin with a single space.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1005.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1006:Preprocessor keywords should not be preceded by space", Justification = "<Pending>")]
+# description: A C# preprocessor-type keyword is preceded by space.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1006.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1007:Operator keyword should be followed by space", Justification = "<Pending>")]
+# description: The operator keyword within a C# operator overload method is not followed by any whitespace.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1007.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1008:Opening parenthesis should be spaced correctly", Justification = "<Pending>")]
+# description: An opening parenthesis within a C# statement is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1008.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1009:Closing parenthesis should be spaced correctly", Justification = "<Pending>")]
+# description: A closing parenthesis within a C# statement is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1009.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1010:Opening square brackets should be spaced correctly", Justification = "<Pending>")]
+# description: An opening square bracket within a C# statement is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1010.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1011:Closing square brackets should be spaced correctly", Justification = "<Pending>")]
+# description: A closing square bracket within a C# statement is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1011.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1012:Opening braces should be spaced correctly", Justification = "<Pending>")]
+# description: An opening brace within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1012.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1013:Closing braces should be spaced correctly", Justification = "<Pending>")]
+# description: A closing brace within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1013.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1014:Opening generic brackets should be spaced correctly", Justification = "<Pending>")]
+# description: An opening generic bracket within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1014.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1015:Closing generic brackets should be spaced correctly", Justification = "<Pending>")]
+# description: A closing generic bracket within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1015.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1016:Opening attribute brackets should be spaced correctly", Justification = "<Pending>")]
+# description: An opening attribute bracket within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1016.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1017:Closing attribute brackets should be spaced correctly", Justification = "<Pending>")]
+# description: A closing attribute bracket within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1017.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1018:Nullable type symbols should be spaced correctly", Justification = "<Pending>")]
+# description: A nullable type symbol within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1018.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1019:Member access symbols should be spaced correctly", Justification = "<Pending>")]
+# description: The spacing around a member access symbol is incorrect, within a C# code file.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1019.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1020:Increment decrement symbols should be spaced correctly", Justification = "<Pending>")]
+# description: An increment or decrement symbol within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1020.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1021:Negative signs should be spaced correctly", Justification = "<Pending>")]
+# description: A negative sign within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1021.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1022:Positive signs should be spaced correctly", Justification = "<Pending>")]
+# description: A positive sign within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1022.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1023:Dereference and access of symbols should be spaced correctly", Justification = "<Pending>")]
+# description: A dereference symbol or an access-of symbol within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1023.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1024:Colons Should Be Spaced Correctly", Justification = "<Pending>")]
+# description: A colon within a C# element is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1024.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "<Pending>")]
+# description: The code contains multiple whitespace characters in a row.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1025.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1026:Code should not contain space after new or stackalloc keyword in implicitly typed array allocation", Justification = "<Pending>")]
+# description: An implicitly typed array allocation within a C# code file is not spaced correctly.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1026.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>")]
+# description: The code contains a tab or space character which is not consistent with the current project settings.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1027.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1028:Code should not contain trailing whitespace", Justification = "<Pending>")]
+# description: There should not be any whitespace at the end of a line of code.
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1028.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1100:Do not prefix calls with base unless local implementation exists", Justification = "<Pending>")]
+# description: A call to a member from an inherited class begins with 'base.', and the local class does not contain an override or implementation of the member.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1100.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1101:Prefix local calls with this", Justification = "<Pending>")]
+# description: A call to an instance member of the local class or a base class is not prefixed with 'this.', within a C# code file.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1101.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1102:Query clause should follow previous clause", Justification = "<Pending>")]
+# description: A C# query clause does not begin on the same line as the previous clause, or on the next line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1102.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1103:Query clauses should be on separate lines or all on one line", Justification = "<Pending>")]
+# description: The clauses within a C# query expression are not all placed on the same line, and each clause is not placed on its own line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1103.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1104:Query clause should begin on new line when previous clause spans multiple lines", Justification = "<Pending>")]
+# description: A clause within a C# query expression begins on the same line as the previous clause, when the previous clause spans across multiple lines.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1104.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1105:Query clauses spanning multiple lines should begin on own line", Justification = "<Pending>")]
+# description: A clause within a C# query expression spans across multiple lines, and does not begin on its own line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1105.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1106:Code should not contain empty statements", Justification = "<Pending>")]
+# description: The C# code contains an extra semicolon.
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1106.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1107:Code should not contain multiple statements on one line", Justification = "<Pending>")]
+# description: The C# code contains more than one statement on a single line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1107.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1108:Block statements should not contain embedded comments", Justification = "<Pending>")]
+# description: A C# statement contains a comment between the declaration of the statement and the opening brace of the statement.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1108.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1109:Block statements should not contain embedded regions", Justification = "<Pending>")]
+# description: A C# statement contains a region tag between the declaration of the statement and the opening brace of the statement.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1109.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1110:Opening parenthesis or bracket should be on declaration line", Justification = "<Pending>")]
+# description: The opening parenthesis or bracket is not placed on the same line as the method/indexer/attribute/array name.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1110.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1111:Closing parenthesis should be on line of last parameter", Justification = "<Pending>")]
+# description: The closing parenthesis or bracket in a call to or declaration of a C# method/indexer/attribute/array/constructor/delegate is not placed on the same line as the last parameter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1111.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1112:Closing parenthesis should be on line of opening parenthesis", Justification = "<Pending>")]
+# description: The closing parenthesis or bracket in a call to a C# method or indexer, or the declaration of a method or indexer, is not placed on the same line as the opening bracket when the element does not take any parameters.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1112.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1113:Comma should be on the same line as previous parameter", Justification = "<Pending>")]
+# description: A comma between two parameters in a call to a C# method or indexer, or in the declaration of a method or indexer, is not placed on the same line as the previous parameter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1113.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1114:Parameter list should follow declaration", Justification = "<Pending>")]
+# description: The start of the parameter list for a method/constructor/indexer/array/operator call or declaration does not begin on the same line as the opening bracket, or on the line after the opening bracket.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1114.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1115:Parameter should follow comma", Justification = "<Pending>")]
+# description: A parameter within a C# method or indexer call or declaration does not begin on the same line as the previous parameter, or on the next line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1115.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1116:Split parameters should start on line after declaration", Justification = "<Pending>")]
+# description: The parameters to a C# method or indexer call or declaration span across multiple lines, but the first parameter does not start on the line after the opening bracket.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1116.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1117:Parameters should be on same line or separate lines", Justification = "<Pending>")]
+# description: The parameters to a C# method or indexer call or declaration are not all on the same line or each on a separate line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1117.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1118:Parameter should not span multiple lines", Justification = "<Pending>")]
+# description: A parameter to a C# method/indexer/attribute/array, other than the first parameter, spans across multiple lines. If the parameter is short, place the entire parameter on a single line. Otherwise, save the contents of the parameter in a temporary variable and pass the temporary variable as a parameter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1118.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1119:Statement should not use unnecessary parenthesis", Justification = "<Pending>")]
+# description: A C# statement contains parenthesis which are unnecessary and should be removed.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1119.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1119_p:Statement should not use unnecessary parenthesis", Justification = "<Pending>")]
+# description: A C# statement contains parenthesis which are unnecessary and should be removed.
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.SA1119_p.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1120:Comments should contain text", Justification = "<Pending>")]
+# description: The C# comment does not contain any comment text.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1120.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1121:Use built-in type alias", Justification = "<Pending>")]
+# description: The code uses one of the basic C# types, but does not use the built-in alias for the type.
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1121.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1122:Use string.Empty for empty strings", Justification = "<Pending>")]
+# description: The C# code includes an empty string, written as "".
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1122.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1123:Do not place regions within elements", Justification = "<Pending>")]
+# description: The C# code contains a region within the body of a code element.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1123.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1124:Do not use regions", Justification = "<Pending>")]
+# description: The C# code contains a region.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1124.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1125:Use shorthand for nullable types", Justification = "<Pending>")]
+# description: The Nullable<T> type has been defined not using the C# shorthand. For example, Nullable<DateTime> has been used instead of the preferred DateTime?
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1125.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:Prefix calls correctly", Justification = "<Pending>")]
+# description: A call to a member is not prefixed with the 'this.', 'base.', 'object.' or 'typename.' prefix to indicate the intended method call, within a C# code file.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1126.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1127:Generic type constraints should be on their own line", Justification = "<Pending>")]
+# description: Each type constraint clause for a generic type parameter should be listed on a line of code by itself.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1127.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1128:Put constructor initializers on their own line", Justification = "<Pending>")]
+# description: A constructor initializer, including the colon character, should be on its own line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1128.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1129:Do not use default value type constructor", Justification = "<Pending>")]
+# description: When creating a new instance of a value type T, the syntax 'default(T)' is functionally equivalent to the syntax 'new T()'. To avoid confusion regarding the behavior of the resulting instance, the first form is preferred.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1129.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1130:Use lambda syntax", Justification = "<Pending>")]
+# description: Lambda expressions are more succinct and easier to read than anonymous methods, so they should are preferred whenever the two are functionally equivalent.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1130.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1131:Use readable conditions", Justification = "<Pending>")]
+# description: When a comparison is made between a variable and a literal, the variable should be placed on the left-hand-side to maximize readability.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1131.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1132:Do not combine fields", Justification = "<Pending>")]
+# description: Each field should be declared on its own line, in order to clearly see each field of a type and allow for proper documentation of the behavior of each field.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1132.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1133:Do not combine attributes", Justification = "<Pending>")]
+# description: Each attribute usage should be placed in its own set of square brackets for maximum readability.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1133.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1134:Attributes should not share line", Justification = "<Pending>")]
+# description: Each attribute should be placed on its own line of code.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1134.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1135:Using directives should be qualified", Justification = "<Pending>")]
+# description: All using directives should be qualified.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1135.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1136:Enum values should be on separate lines", Justification = "<Pending>")]
+# description: Enum values should be placed on their own lines for maximum readability.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1136.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1137:Elements should have the same indentation", Justification = "<Pending>")]
+# description: Elements at the same level in the syntax tree should have the same indentation.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1137.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1139:Use literal suffix notation instead of casting", Justification = "<Pending>")]
+# description: Use literal suffix notation instead of casting, in order to improve readability, avoid bugs related to illegal casts and ensure that optimal IL is produced.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1139.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1200:Using directives should be placed correctly", Justification = "<Pending>")]
+# description: A C# using directive is placed outside of a namespace element.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1200.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:Elements should appear in the correct order", Justification = "<Pending>")]
+# description: An element within a C# code file is out of order in relation to the other elements in the code.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1201.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1202:Elements should be ordered by access", Justification = "<Pending>")]
+# description: An element within a C# code file is out of order in relation to other elements in the code.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1202.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1203:Constants should appear before fields", Justification = "<Pending>")]
+# description: A constant field is placed beneath a non-constant field.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1203.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1204:Static elements should appear before instance elements", Justification = "<Pending>")]
+# description: A static element is positioned beneath an instance element.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1204.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1205:Partial elements should declare access", Justification = "<Pending>")]
+# description: The partial element does not have an access modifier defined.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1205.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1206:Declaration keywords should follow order", Justification = "<Pending>")]
+# description: The keywords within the declaration of an element do not follow a standard ordering scheme.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1206.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1207:Protected should come before internal", Justification = "<Pending>")]
+# description: The keyword '{0}' is positioned after the keyword '{1}' within the declaration of a {0} {1} C# element.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1207.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1208:System using directives should be placed before other using directives", Justification = "<Pending>")]
+# description: A using directive which declares a member of the 'System' namespace appears after a using directive which declares a member of a different namespace, within a C# code file.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1208.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1209:Using alias directives should be placed after other using directives", Justification = "<Pending>")]
+# description: A using-alias directive is positioned before a regular using directive.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1209.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1210:Using directives should be ordered alphabetically by namespace", Justification = "<Pending>")]
+# description: The using directives within a C# code file are not sorted alphabetically by namespace.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1210.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1211:Using alias directives should be ordered alphabetically by alias name", Justification = "<Pending>")]
+# description: The using-alias directives within a C# code file are not sorted alphabetically by alias name.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1211.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1212:Property accessors should follow order", Justification = "<Pending>")]
+# description: A get accessor appears after a set accessor within a property or indexer.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1212.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1213:Event accessors should follow order", Justification = "<Pending>")]
+# description: An add accessor appears after a remove accessor within an event.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1213.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1214:Readonly fields should appear before non-readonly fields", Justification = "<Pending>")]
+# description: A readonly field is positioned beneath a non-readonly field.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1214.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1216:Using static directives should be placed at the correct location.", Justification = "<Pending>")]
+# description: A using static directive is positioned before a regular or after an alias using directive.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1216.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1217:Using static directives should be ordered alphabetically", Justification = "<Pending>")]
+# description: All using static directives should be ordered alphabetically.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1217.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "<Pending>")]
+# description: The name of a C# element does not begin with an upper-case letter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1300.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1301:Element should begin with lower-case letter", Justification = "<Pending>")]
+# description: There are currently no situations in which this rule will fire.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1301.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1302:Interface names should begin with I", Justification = "<Pending>")]
+# description: The name of a C# interface does not begin with the capital letter I.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1302.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1303:Const field names should begin with upper-case letter", Justification = "<Pending>")]
+# description: The name of a constant C# field should begin with an upper-case letter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1303.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1304:Non-private readonly fields should begin with upper-case letter", Justification = "<Pending>")]
+# description: The name of a non-private readonly C# field should being with an upper-case letter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1304.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:Field names should not use Hungarian notation", Justification = "<Pending>")]
+# description: The name of a field or variable in C# uses Hungarian notation.
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1305.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1306:Field names should begin with lower-case letter", Justification = "<Pending>")]
+# description: The name of a field in C# does not begin with a lower-case letter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1306.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1307:Accessible fields should begin with upper-case letter", Justification = "<Pending>")]
+# description: The name of a public or internal field in C# does not begin with an upper-case letter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1307.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1308:Variable names should not be prefixed", Justification = "<Pending>")]
+# description: A field name in C# is prefixed with 'm_', 's_', or 't_'.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1308.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1309:Field names should not begin with underscore", Justification = "<Pending>")]
+# description: A field name in C# begins with an underscore.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1309.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:Field names should not contain underscore", Justification = "<Pending>")]
+# description: A field name in C# contains an underscore.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1310.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1311:Static readonly fields should begin with upper-case letter", Justification = "<Pending>")]
+# description: The name of a static readonly field does not begin with an upper-case letter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1311.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1312:Variable names should begin with lower-case letter", Justification = "<Pending>")]
+# description: The name of a variable in C# does not begin with a lower-case letter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1312.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1313:Parameter names should begin with lower-case letter", Justification = "<Pending>")]
+# description: The name of a parameter in C# does not begin with a lower-case letter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1313.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1314:Type parameter names should begin with T", Justification = "<Pending>")]
+# description: The name of a C# type parameter does not begin with the capital letter T.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1314.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1400:Access modifier should be declared", Justification = "<Pending>")]
+# description: The access modifier for a C# element has not been explicitly defined.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1400.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1401:Fields should be private", Justification = "<Pending>")]
+# description: A field within a C# class has an access modifier other than private.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1401.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:File may only contain a single type", Justification = "<Pending>")]
+# description: A C# code file contains more than one unique type.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1402.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1403:File may only contain a single namespace", Justification = "<Pending>")]
+# description: A C# code file contains more than one namespace.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1403.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1404:Code analysis suppression should have justification", Justification = "<Pending>")]
+# description: A Code Analysis SuppressMessage attribute does not include a justification.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1404.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1405:Debug.Assert should provide message text", Justification = "<Pending>")]
+# description: A call to Debug.Assert in C# code does not include a descriptive message.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1405.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1406:Debug.Fail should provide message text", Justification = "<Pending>")]
+# description: A call to Debug.Fail in C# code does not include a descriptive message.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1406.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1407:Arithmetic expressions should declare precedence", Justification = "<Pending>")]
+# description: A C# statement contains a complex arithmetic expression which omits parenthesis around operators.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1407.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1408:Conditional expressions should declare precedence", Justification = "<Pending>")]
+# description: A C# statement contains a complex conditional expression which omits parenthesis around operators.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1408.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1409:Remove unnecessary code", Justification = "<Pending>")]
+# description: A C# file contains code which is unnecessary and can be removed without changing the overall logic of the code.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1409.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1410:Remove delegate parenthesis when possible", Justification = "<Pending>")]
+# description: A call to a C# anonymous method does not contain any method parameters, yet the statement still includes parenthesis.
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1410.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1411:Attribute constructor should not use unnecessary parenthesis", Justification = "<Pending>")]
+# description: TODO.
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1411.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1412:Store files as UTF-8 with byte order mark", Justification = "<Pending>")]
+# description: Source files should be saved using the UTF-8 encoding with a byte order mark
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1412.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1413:Use trailing comma in multi-line initializers", Justification = "<Pending>")]
+# description: A multi-line initializer in a C# code file should use a comma on the last line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1413.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1500:Braces for multi-line statements should not share line", Justification = "<Pending>")]
+# description: The opening or closing brace within a C# statement, element, or expression is not placed on its own line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1500.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1501:Statement should not be on a single line", Justification = "<Pending>")]
+# description: A C# statement containing opening and closing braces is written completely on a single line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1501.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1502:Element should not be on a single line", Justification = "<Pending>")]
+# description: A C# element containing opening and closing braces is written completely on a single line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1502.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1503:Braces should not be omitted", Justification = "<Pending>")]
+# description: The opening and closing braces for a C# statement have been omitted.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1503.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1504:All accessors should be single-line or multi-line", Justification = "<Pending>")]
+# description: Within a C# property, indexer or event, at least one of the child accessors is written on a single line, and at least one of the child accessors is written across multiple lines.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1504.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1505:Opening braces should not be followed by blank line", Justification = "<Pending>")]
+# description: An opening brace within a C# element, statement, or expression is followed by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1505.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1506:Element documentation headers should not be followed by blank line", Justification = "<Pending>")]
+# description: An element documentation header above a C# element is followed by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1506.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1507:Code should not contain multiple blank lines in a row", Justification = "<Pending>")]
+# description: The C# code contains multiple blank lines in a row.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1507.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1508:Closing braces should not be preceded by blank line", Justification = "<Pending>")]
+# description: A closing brace within a C# element, statement, or expression is preceded by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1508.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1509:Opening braces should not be preceded by blank line", Justification = "<Pending>")]
+# description: An opening brace within a C# element, statement, or expression is preceded by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1509.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1510:Chained statement blocks should not be preceded by blank line", Justification = "<Pending>")]
+# description: Chained C# statements are separated by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1510.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1511:While-do footer should not be preceded by blank line", Justification = "<Pending>")]
+# description: The while footer at the bottom of a do-while statement is separated from the statement by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1511.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1512:Single-line comments should not be followed by blank line", Justification = "<Pending>")]
+# description: A single-line comment within C# code is followed by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1512.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1513:Closing brace should be followed by blank line", Justification = "<Pending>")]
+# description: A closing brace within a C# element, statement, or expression is not followed by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1513.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1514:Element documentation header should be preceded by blank line", Justification = "<Pending>")]
+# description: An element documentation header above a C# element is not preceded by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1514.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1515:Single-line comment should be preceded by blank line", Justification = "<Pending>")]
+# description: A single-line comment within C# code is not preceded by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1515.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1516:Elements should be separated by blank line", Justification = "<Pending>")]
+# description: Adjacent C# elements are not separated by a blank line.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1516.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1517:Code should not contain blank lines at start of file", Justification = "<Pending>")]
+# description: The code file has blank lines at the start.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1517.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1518:Use line endings correctly at end of file", Justification = "<Pending>")]
+# description: Code should not contain blank lines at the end of the file
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1518.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1519:Braces should not be omitted from multi-line child statement", Justification = "<Pending>")]
+# description: The opening and closing braces for a multi-line C# statement have been omitted.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1519.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1520:Use braces consistently", Justification = "<Pending>")]
+# description: The opening and closing braces of a chained if/else if/else construct were included for some clauses, but omitted for others.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1520.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:Elements should be documented", Justification = "<Pending>")]
+# description: A C# code element is missing a documentation header.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1600.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1601:Partial elements should be documented", Justification = "<Pending>")]
+# description: A C# partial element is missing a documentation header.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1601.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1602:Enumeration items should be documented", Justification = "<Pending>")]
+# description: An item within a C# enumeration is missing an Xml documentation header.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1602.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1603:Documentation should contain valid XML", Justification = "<Pending>")]
+# description: The XML within a C# element’s document header is badly formed.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1603.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1604:Element documentation should have summary", Justification = "<Pending>")]
+# description: The XML header documentation for a C# element is missing a <summary> tag.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1604.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1605:Partial element documentation should have summary", Justification = "<Pending>")]
+# description: The <summary> or <content> tag within the documentation header for a C# code element is missing or empty.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1605.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1606:Element documentation should have summary text", Justification = "<Pending>")]
+# description: The <summary> tag within the documentation header for a C# code element is empty.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1606.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1607:Partial element documentation should have summary text", Justification = "<Pending>")]
+# description: The <summary> or <content> tag within the documentation header for a C# code element is empty.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1607.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1608:Element documentation should not have default summary", Justification = "<Pending>")]
+# description: The <summary> tag within an element's XML header documentation contains the default text generated by Visual Studio during the creation of the element.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1608.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1609:Property documentation should have value", Justification = "<Pending>")]
+# description: The XML header documentation for a C# property does not contain a <value> tag.
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1609.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1610:Property documentation should have value text", Justification = "<Pending>")]
+# description: The XML header documentation for a C# property contains an empty <value> tag.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1610.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1611:Element parameters should be documented", Justification = "<Pending>")]
+# description: A C# method, constructor, delegate or indexer element is missing documentation for one or more of its parameters.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1611.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1612:Element parameter documentation should match element parameters", Justification = "<Pending>")]
+# description: The documentation describing the parameters to a C# method, constructor, delegate or indexer element does not match the actual parameters on the element.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1612.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1613:Element parameter documentation should declare parameter name", Justification = "<Pending>")]
+# description: A <param> tag within a C# element's documentation header is missing a name attribute containing the name of the parameter.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1613.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1614:Element parameter documentation should have text", Justification = "<Pending>")]
+# description: A <param> tag within a C# element's documentation header is empty.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1614.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1615:Element return value should be documented", Justification = "<Pending>")]
+# description: A C# element is missing documentation for its return value.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1615.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1616:Element return value documentation should have text", Justification = "<Pending>")]
+# description: The <returns> tag within a C# element's documentation header is empty.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1616.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1617:Void return value should not be documented", Justification = "<Pending>")]
+# description: A C# code element does not contain a return value, or returns void, but the documentation header for the element contains a <returns> tag.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1617.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1618:Generic type parameters should be documented", Justification = "<Pending>")]
+# description: A generic C# element is missing documentation for one or more of its generic type parameters.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1618.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1619:Generic type parameters should be documented partial class", Justification = "<Pending>")]
+# description: A generic, partial C# element is missing documentation for one or more of its generic type parameters, and the documentation for the element contains a <summary> tag.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1619.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1620:Generic type parameter documentation should match type parameters", Justification = "<Pending>")]
+# description: The <typeparam> tags within the Xml header documentation for a generic C# element do not match the generic type parameters on the element.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1620.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1621:Generic type parameter documentation should declare parameter name", Justification = "<Pending>")]
+# description: A <typeparam> tag within the XML header documentation for a generic C# element is missing a name attribute, or contains an empty name attribute.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1621.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1622:Generic type parameter documentation should have text", Justification = "<Pending>")]
+# description: A <typeparam> tag within the Xml header documentation for a generic C# element is empty.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1622.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1623:Property summary documentation should match accessors", Justification = "<Pending>")]
+# description: The documentation text within a C# property’s <summary> tag does not match the accessors within the property.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1623.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1624:Property summary documentation should omit accessor with restricted access", Justification = "<Pending>")]
+# description: The documentation text within a C# property’s <summary> tag takes into account all of the accessors within the property, but one of the accessors has limited access.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1624.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1625:Element documentation should not be copied and pasted", Justification = "<Pending>")]
+# description: The Xml documentation for a C# element contains two or more identical entries, indicating that the documentation has been copied and pasted. This can sometimes indicate invalid or poorly written documentation.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1625.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1626:Single-line comments should not use documentation style slashes", Justification = "<Pending>")]
+# description: The C# code contains a single-line comment which begins with three forward slashes in a row.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1626.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1627:Documentation text should not be empty", Justification = "<Pending>")]
+# description: The XML header documentation for a C# code element contains an empty tag.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1627.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1628:Documentation text should begin with a capital letter", Justification = "<Pending>")]
+# description: A section of the XML header documentation for a C# element does not begin with a capital letter.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1628.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1629:Documentation text should end with a period", Justification = "<Pending>")]
+# description: A section of the XML header documentation for a C# element does not end with a period.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1629.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1630:Documentation text should contain whitespace", Justification = "<Pending>")]
+# description: A section of the XML header documentation for a C# element does not contain any whitespace between words.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1630.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1631:Documentation should meet character percentage", Justification = "<Pending>")]
+# description: A section of the Xml header documentation for a C# element does not contain enough alphabetic characters.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1631.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1632:Documentation text should meet minimum character length", Justification = "<Pending>")]
+# description: A section of the Xml header documentation for a C# element is too short.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1632.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1633:File should have header", Justification = "<Pending>")]
+# description: A C# code file is missing a standard file header.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1633.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1634:File header should show copyright", Justification = "<Pending>")]
+# description: The file header at the top of a C# code file is missing a copyright tag.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1634.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1635:File header should have copyright text", Justification = "<Pending>")]
+# description: The file header at the top of a C# code file is missing copyright text.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1635.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1636:File header copyright text should match", Justification = "<Pending>")]
+# description: The file header at the top of a C# code file does not contain the appropriate copyright text.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1636.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1637:File header should contain file name", Justification = "<Pending>")]
+# description: The file header at the top of a C# code file is missing the file name.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1637.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1638:File header file name documentation should match file name", Justification = "<Pending>")]
+# description: The file attribute within copyright tag of the file header at the top of a C# code file does not contain the name of the file.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1638.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1639:File header should have summary", Justification = "<Pending>")]
+# description: The file header at the top of a C# code file does not contain a filled-in summary tag.
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1639.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1640:File header should have valid company text", Justification = "<Pending>")]
+# description: The file header at the top of a C# code file does not contain company name text.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1640.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1641:File header company name text should match", Justification = "<Pending>")]
+# description: The file header at the top of a C# code file does not contain the appropriate company name text.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1641.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1642:Constructor summary documentation should begin with standard text", Justification = "<Pending>")]
+# description: The XML documentation header for a C# constructor does not contain the appropriate summary text.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1642.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1643:Destructor summary documentation should begin with standard text", Justification = "<Pending>")]
+# description: The XML documentation header for a C# finalizer does not contain the appropriate summary text.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1643.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1644:Documentation headers should not contain blank lines", Justification = "<Pending>")]
+# description: A section within the XML documentation header for a C# element contains blank lines.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1644.severity = warning
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1645:Included documentation file does not exist", Justification = "<Pending>")]
+# description: An included XML documentation file does not exist.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1645.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1646:Included documentation XPath does not exist", Justification = "<Pending>")]
+# description: An included XML documentation link contains an invalid path.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1646.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1647:Include node does not contain valid file and path", Justification = "<Pending>")]
+# description: An include tag within an XML documentation header does not contain valid file and path attribute.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1647.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1648:inheritdoc should be used with inheriting class", Justification = "<Pending>")]
+# description: <inheritdoc> has been used on an element that doesn't inherit from a base class or implement an interface.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1648.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1649:File name should match first type name", Justification = "<Pending>")]
+# description: The file name of a C# code file does not match the first type declared in the file.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1649.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:Element documentation should be spelled correctly", Justification = "<Pending>")]
+# description: The element documentation for the element contains one or more spelling mistakes or unrecognized words.
+# custom tags: ["NotConfigurable"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SA1650.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1651:Do not use placeholder elements", Justification = "<Pending>")]
+# description: The element documentation contains a <placeholder> element.
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.SA1651.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SX1101:Do not prefix local calls with 'this.'", Justification = "<Pending>")]
+# description: A call to an instance member of the local class or a base class is prefixed with `this.`.
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SX1101.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SX1309:Field names should begin with underscore", Justification = "<Pending>")]
+# description: A field name in C# does not begin with an underscore.
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SX1309.severity = none
+
+# [SuppressMessage("StyleCop.CSharp.NamingRules", "SX1309S:Static field names should begin with underscore", Justification = "<Pending>")]
+# description: A static field name in C# does not begin with an underscore.
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.SX1309S.severity = none

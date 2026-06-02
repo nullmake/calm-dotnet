@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../Shared.Library.props" />
+  <Import Project="../Shared.PackageMetadata.props" />
+  <Import Project="..\Polyfills\Polyfills.projitems" Label="Shared" />
+  <Import Project="../Shared.Compliance.targets" />
+
+  <PropertyGroup>
+    <WarningsAsErrors>$(WarningsAsErrors);SYSLIB1006</WarningsAsErrors>
+    <NoWarn>$(NoWarn);SYSLIB1002</NoWarn>
+  </PropertyGroup>
+
+  <!-- NuGet package metadata -->
+  <PropertyGroup>
+    <PackageTags>concurrency messaging actor-model lock-free async performance cqs task-scheduling</PackageTags>
+    <Description>A lightweight, high-performance execution engine for .NET that simplifies concurrent programming using Task-based units. It ensures single-threaded execution to structurally eliminate race conditions, deadlocks, and this-reference leaks.</Description>
+  </PropertyGroup>
+
+  <!-- Dependencies -->
+  <ItemGroup Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework' or '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.2" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework' or '$(TargetFrameworkIdentifier)' == '.NETStandard'">
+    <PackageReference Include="Microsoft.Bcl.TimeProvider" Version="9.0.2" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.2" />
+    <PackageReference Include="System.Threading.Channels" Version="9.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2" />
+  </ItemGroup>
+
+  <!-- ===================================================================================== -->
+  <!-- Analyzers included in NuGet packages                                                  -->
+  <!-- ===================================================================================== -->
+  <PropertyGroup>
+    <CalmAnalyzersId>Calm.Analyzers</CalmAnalyzersId>
+    <CalmAnalyzersTfm>netstandard2.0</CalmAnalyzersTfm>
+    <CalmAnalyzersDir>../$(CalmAnalyzersId)</CalmAnalyzersDir>
+    <CalmAnalyzersProjectPath>$(CalmAnalyzersDir)/$(CalmAnalyzersId).csproj</CalmAnalyzersProjectPath>
+    <CalmAnalyzersDll>$(CalmAnalyzersDir)/bin/$(Configuration)/$(CalmAnalyzersTfm)/$(CalmAnalyzersId).dll</CalmAnalyzersDll>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(CalmAnalyzersProjectPath)" ReferenceOutputAssembly="false" />
+    <None Include="$(CalmAnalyzersDll)" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+
+  <Target Name="HookAfterCreateComplianceFiles">
+    <Message Importance="high" Text="$(CalmAnalyzersId) $(PackageVersion) -&gt; Generate CycloneDX SBOM: $(CalmAnalyzersTfm)" />
+    <Exec Command="dotnet CycloneDX $(CalmAnalyzersProjectPath) -o $(ManifestDir)/$(CalmAnalyzersId) -tfm $(CalmAnalyzersTfm) -fn $(SbomFileName) -rs -ed -sv $(PackageVersion)" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" />
+
+    <Message Importance="high" Text="Creating Third-Party Notices" />
+    <Exec Command="dotnet SbomToNotice $(ManifestDir)/$(CalmAnalyzersId)/$(SbomFileName) -o $(ComplianceDir)/$(CalmAnalyzersId)/$(NoticesFileName) --ofmt Html" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" />
+  </Target>
+</Project>

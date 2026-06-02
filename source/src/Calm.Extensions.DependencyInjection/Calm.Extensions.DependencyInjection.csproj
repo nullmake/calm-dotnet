@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../Shared.Library.props" />
+  <Import Project="../Shared.PackageMetadata.props" />
+  <Import Project="..\Polyfills\Polyfills.projitems" Label="Shared" />
+  <Import Project="../Shared.Compliance.targets" />
+
+  <PropertyGroup>
+    <WarningsAsErrors>$(WarningsAsErrors);SYSLIB1006</WarningsAsErrors>
+    <NoWarn>$(NoWarn);SYSLIB1002</NoWarn>
+  </PropertyGroup>
+
+  <!-- MinVer configuration -->
+  <PropertyGroup>
+    <MinVerTagPrefix>$(MSBuildProjectName)/v</MinVerTagPrefix>
+  </PropertyGroup>
+
+  <!-- NuGet package metadata -->
+  <PropertyGroup>
+    <PackageId>$(MSBuildProjectName)</PackageId>
+    <PackageTags>calm-net dependency-injection di extensions microsoft-extensions</PackageTags>
+    <Description>Dependency Injection extensions for CALM. Seamlessly integrates CALM execution engines and messaging services with Microsoft.Extensions.DependencyInjection.</Description>
+  </PropertyGroup>
+
+  <!-- Dependencies -->
+  <ItemGroup>
+    <ProjectReference Include="..\Calm.Core\Calm.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.2" />
+  </ItemGroup>
+</Project>

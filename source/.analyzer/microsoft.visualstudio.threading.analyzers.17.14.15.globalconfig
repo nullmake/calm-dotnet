@@ -1,0 +1,196 @@
+# microsoft.visualstudio.threading.analyzers\17.14.15
+
+# Top level entry required to mark this as a global AnalyzerConfig file
+is_global = true
+
+#------------|------------------------------------------------------------------------------------------------------------------
+# Severity   | Build-time behavior
+#------------|------------------------------------------------------------------------------------------------------------------
+# error      | Violations appear as build errors and cause builds to fail.
+#------------|------------------------------------------------------------------------------------------------------------------
+# warning    | Violations appear as build warnings but do not cause builds to fail
+#            | (unless you have an option set to treat warnings as errors).
+#------------|------------------------------------------------------------------------------------------------------------------
+# suggestion | Violations appear as build messages and as suggestions in the Visual Studio IDE.
+#            | (In Visual Studio, suggestions appear as three gray dots under the first two characters.)
+#------------|------------------------------------------------------------------------------------------------------------------
+# silent     | Violations aren't visible to the user.
+#            | However, for code-style rules, Visual Studio code-generation features still generate code in this style.
+#            | These rules also participate in cleanup and appear in the Quick Actions and Refactorings menu in Visual Studio.
+#------------|------------------------------------------------------------------------------------------------------------------
+# none       | Rule is suppressed completely.
+#            | However, for code-style rules, Visual Studio code-generation features still generate code in this style.
+#------------|------------------------------------------------------------------------------------------------------------------
+# default    | The default severity of the rule is used.
+#            | The default severities for each .NET release are listed in the dotnet/sdk repo. In that table,
+#            | "Disabled" corresponds to none, "Hidden" corresponds to silent, and "Info" corresponds to suggestion.
+#------------|------------------------------------------------------------------------------------------------------------------
+
+# [SuppressMessage("Usage", "VSTHRD001:Avoid legacy thread switching APIs", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD001.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD002:Avoid problematic synchronous waits", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD002.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD003:Avoid awaiting foreign Tasks", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD003.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD004:Await SwitchToMainThreadAsync", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=error }
+dotnet_diagnostic.VSTHRD004.severity = error
+
+# [SuppressMessage("Usage", "VSTHRD010:Invoke single-threaded types on Main thread", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: ["CompilationEnd"]
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD010.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD011:Use AsyncLazy<T>", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=error }
+dotnet_diagnostic.VSTHRD011.severity = error
+
+# [SuppressMessage("Usage", "VSTHRD012:Provide JoinableTaskFactory where allowed", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD012.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD100:Avoid async void methods", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD100.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD101:Avoid unsupported async delegates", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD101.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD102:Implement internal logic asynchronously", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.VSTHRD102.severity = suggestion
+
+# [SuppressMessage("Usage", "VSTHRD103:Call async methods when in an async method", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD103.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD104:Offer async methods", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.VSTHRD104.severity = suggestion
+
+# [SuppressMessage("Usage", "VSTHRD105:Avoid method overloads that assume TaskScheduler.Current", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD105.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD106:Use InvokeAsync to raise async events", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD106.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD107:Await Task within using expression", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=error }
+dotnet_diagnostic.VSTHRD107.severity = error
+
+# [SuppressMessage("Usage", "VSTHRD108:Assert thread affinity unconditionally", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD108.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD109:Switch instead of assert in async methods", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=error }
+dotnet_diagnostic.VSTHRD109.severity = error
+
+# [SuppressMessage("Usage", "VSTHRD110:Observe result of async calls", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD110.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD111:Use ConfigureAwait(bool)", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.VSTHRD111.severity = suggestion
+
+# [SuppressMessage("Usage", "VSTHRD112:Implement System.IAsyncDisposable", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: The System.IAsyncDisposable interface is defined in the Microsoft.Bcl.AsyncInterfaces NuGet package.
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.VSTHRD112.severity = suggestion
+
+# [SuppressMessage("Usage", "VSTHRD113:Check for System.IAsyncDisposable", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: The System.IAsyncDisposable interface is defined in the Microsoft.Bcl.AsyncInterfaces NuGet package.
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.VSTHRD113.severity = suggestion
+
+# [SuppressMessage("Usage", "VSTHRD114:Avoid returning a null Task", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers.CSharp, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD114.severity = warning
+
+# [SuppressMessage("Usage", "VSTHRD115:Avoid creating JoinableTaskContext with null SynchronizationContext", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD115.severity = warning
+
+# [SuppressMessage("Style", "VSTHRD200:Use "Async" suffix for async methods", Justification = "<Pending>")]
+# analyzer: Microsoft.VisualStudio.Threading.Analyzers, Version=17.14.15.42505, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.VSTHRD200.severity = warning
+

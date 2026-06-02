@@ -1,0 +1,29 @@
+<Solution>
+  <Folder Name="/.Solution Items/">
+    <File Path="../.editorconfig" />
+    <File Path="Shared.Common.props" />
+  </Folder>
+  <Folder Name="/.Solution Items/src/">
+    <File Path="src/Shared.Analyzer.props" />
+    <File Path="src/Shared.Compliance.targets" />
+    <File Path="src/Shared.Library.props" />
+    <File Path="src/Shared.PackageMetadata.props" />
+  </Folder>
+  <Folder Name="/.Solution Items/tests/">
+    <File Path="tests/Shared.Test.props" />
+    <File Path="tests/test.runsettings" />
+    <File Path="tests/xunit.runner.json" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Calm.Analyzers/Calm.Analyzers.csproj" />
+    <Project Path="src/Calm.Core/Calm.Core.csproj" />
+    <Project Path="src/Calm.Extensions.DependencyInjection/Calm.Extensions.DependencyInjection.csproj" />
+    <Project Path="src/Polyfills/Polyfills.shproj" Id="615e5e1b-dfb8-4f9d-8a45-982bd9a421aa" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Calm.Analyzers.Tests/Calm.Analyzers.Tests.csproj" Id="309d0d67-b7e7-41c3-90ad-5901844caeb8" />
+    <Project Path="tests/Calm.Core.Tests/Calm.Core.Tests.csproj" />
+    <Project Path="tests/Calm.Extensions.DependencyInjection.Tests/Calm.Extensions.DependencyInjection.Tests.csproj" />
+    <Project Path="tests/SharedTestCode/SharedTestCode.shproj" Id="41eaf22f-9253-4c37-9f54-64165ff0501e" />
+  </Folder>
+</Solution>

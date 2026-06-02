@@ -1,0 +1,104 @@
+<Project>
+  <!-- Common settings for all test projects -->
+  <Import Project="../Shared.Common.props" />
+
+  <!-- Shared test code. -->
+  <Import Project="./SharedTestCode/SharedTestCode.projitems" Label="Shared" />
+
+  <!-- Test-specific settings -->
+  <PropertyGroup>
+    <TargetFrameworks>net10.0;net8.0;net472</TargetFrameworks>
+    <OutputType>exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <!-- CLS compliance -->
+  <ItemGroup>
+    <AssemblyAttribute Include="System.CLSCompliantAttribute">
+      <_Parameter1>false</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- ## Since the name reflects the test subject and content, the use of underscores is permitted. -->
+    <!--    - "Naming", "CA1707:Identifiers should not contain underscores" -->
+    <!-- ## Performance does not need to be considered when generating test logs. -->
+    <!--    - "Performance", "CA1848:Use the LoggerMessage delegates" -->
+    <!--    - "Performance", "CA1873:Avoid potentially expensive logging" -->
+    <!--    - "Usage", "CA2254:Template should be a static expression" -->
+    <!-- ## Use ConfigureAwait(true) in accordance with xUnit1030 -->
+    <!--    - "Reliability", "CA2007:Consider calling ConfigureAwait on the awaited task" -->
+    <!--    - "Usage", "MA0004:Use Task.ConfigureAwait"-->
+    <!--    - "Usage", "VSTHRD111:Use ConfigureAwait(bool)"-->
+    <!-- ## Test code can be verbose. -->
+    <!--    - "Design", "MA0051:Method is too long" -->
+    <!-- ## Exclusion settings for classes used in the Calm messaging test. -->
+    <!--    - "Performance", "CA1812:Avoid uninstantiated internal classes" -->
+    <!--    - "Performance", "CA1822:Mark members as static" -->
+    <!--    - "Performance", "CA1852:Seal internal types" -->
+    <!--    - "Style", "IDE0060:Remove unused parameter" -->
+    <!--    - "Roslynator", "RCS1163:Unused parameter" -->
+    <!-- ## Suppression for SynchronizationContext tests that intentionally test async void behavior -->
+    <!--    - "Reliability", "VSTHRD001:Await JoinableTaskFactory.SwitchToMainThreadAsync()" -->
+    <!--    - "Reliability", "VSTHRD101:Avoid using async lambda for void delegate" -->
+    <!--    - "Reliability", "MA0147:Avoid async void method for delegate" -->
+    <!--    - "Reliability", "VSTHRD003:Avoid awaiting Task not started in context" -->
+    <!-- ## Used intentionally for testing purposes. -->
+    <!--    - "Performance", "CA1849:Call async methods when in an async method" -->
+    <!--    - "Design", "MA0042:Do not use blocking calls in an async method" -->
+    <!--    - "Usage", "VSTHRD103:Call async methods when in an async method" -->
+    <!--    - "Major Code Smell", "S6966:Awaitable method should be used" -->
+    <NoWarn>
+      $(NoWarn);
+      CA1707;CA1812;CA1822;CA1848;CA1849;CA1852;CA1873;CA2007;CA2254;
+      IDE0060;
+      MA0004;MA0042;MA0051;MA0147;
+      RCS1163;
+      VSTHRD001;VSTHRD003;VSTHRD101;VSTHRD103;VSTHRD111;
+      S6966;
+    </NoWarn>
+  </PropertyGroup>
+
+  <!-- Import Analyzer rules -->
+  <ItemGroup>
+    <GlobalAnalyzerConfigFiles Include="$(MSBuildThisFileDirectory).analyzer\xunit.analyzers.1.27.0.globalconfig" />
+  </ItemGroup>
+
+  <!-- The configuration files -->
+  <PropertyGroup>
+    <RunSettingsFilePath>$(MSBuildThisFileDirectory)test.runsettings</RunSettingsFilePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)xunit.runner.json" CopyToOutputDirectory="PreserveNewest" Visible="false" />
+  </ItemGroup>
+
+  <!-- Test framework dependencies -->
+  <ItemGroup>
+    <PackageReference Include="xunit.analyzers" Version="1.27.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="8.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
+    <PackageReference Include="xunit.v3" Version="3.2.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="Meziantou.Extensions.Logging.Xunit.v3" Version="1.1.26" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.5" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="10.0.0" />
+    <PackageReference Include="Serilog.Sinks.XUnit3" Version="1.2.0" />
+  </ItemGroup>
+
+  <!-- Access Settings from Moq(DynamicProxyGenAssembly2) -->
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+</Project>

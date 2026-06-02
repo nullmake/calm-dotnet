@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../Shared.Test.props" />
+
+  <!-- Test-specific settings -->
+  <PropertyGroup>
+    <TargetFrameworks>net472</TargetFrameworks>
+    <NoWarn>$(NoWarn);S101;S2699;MA0136</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.12.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Analyzer.Testing" Version="1.1.3" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Features" Version="4.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Calm.Analyzers\Calm.Analyzers.csproj" />
+    <ProjectReference Include="..\..\src\Calm.Core\Calm.Core.csproj" />
+  </ItemGroup>
+
+  <Target Name="ExportAllAssetsPaths" BeforeTargets="GetAssemblyAttributes">
+    <ItemGroup>
+      <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute" Condition="'@(Analyzer)' != ''">
+        <_Parameter1>Analyzer_%(Analyzer.Filename)_$([System.String]::new('%(Analyzer.Identity)').GetHashCode())</_Parameter1>
+        <_Parameter2>%(Analyzer.FullPath)</_Parameter2>
+      </AssemblyAttribute>
+
+      <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute" Condition="'@(ReferencePath)' != ''">
+        <_Parameter1>Reference_%(ReferencePath.Filename)_$([System.String]::new('%(ReferencePath.Identity)').GetHashCode())</_Parameter1>
+        <_Parameter2>%(ReferencePath.FullPath)</_Parameter2>
+      </AssemblyAttribute>
+    </ItemGroup>
+  </Target>
+</Project>

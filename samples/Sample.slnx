@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/.Solution Items/">
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Folder Name="/Calm/">
+    <Project Path="../source/src/Calm.Analyzers/Calm.Analyzers.csproj" />
+    <Project Path="../source/src/Calm.Core/Calm.Core.csproj" />
+    <Project Path="../source/src/Calm.Extensions.DependencyInjection/Calm.Extensions.DependencyInjection.csproj" />
+  </Folder>
+  <Project Path="Calm.Sample.Winforms/Calm.Sample.Winforms.csproj" />
+  <Project Path="Sample01/Sample01.csproj" />
+  <Project Path="Sample02/Sample02.csproj" Id="0f98fb64-5abf-439b-b3ec-61e82d72f9f4" />
+  <Project Path="Sample03/Sample03.csproj" Id="9a7f7169-a33f-4dd0-a0e9-7ce015e04311" />
+  <Project Path="Sample04/Sample04.csproj" Id="8e2f8ed9-bf11-44c7-beef-4276284925a2" />
+  <Project Path="Sample05/Sample05.csproj" Id="89a5dbfb-c577-4980-b868-b9704b69812e" />
+  <Project Path="Shared/SharedLibrary.csproj" Id="fcaf807c-6d33-41f9-a03f-f3b944221998" />
+</Solution>

@@ -1,0 +1,65 @@
+article p {
+  line-height: 1.7;
+  margin: 1em 0;
+}
+
+article h2 {
+  margin-top: 1.7em;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.3em;
+}
+
+article h3 {
+  margin-top: 1em;
+  font-weight: 600;
+}
+
+article pre code {
+  border: 1px solid #ccc;
+  line-height: 1.7;
+}
+
+article ul,
+article ol {
+  line-height: 1.7;
+}
+
+header #logo {
+  width: 38px;
+  height: auto;
+}
+
+.logo-container {
+  .img-dark {
+    display: none !important;
+  }
+  .img-light {
+    display: inline-block !important;
+  }
+}
+
+[data-bs-theme="dark"] .logo-container {
+  .img-light {
+    display: none !important;
+  }
+  .img-dark {
+    display: inline-block !important;
+  }
+}
+
+.btn-outline-theme {
+  --bs-btn-color: var(--bs-body-color);
+  --bs-btn-border-color: var(--bs-body-color);
+  --bs-btn-hover-color: var(--bs-body-bg);
+  --bs-btn-hover-bg: var(--bs-body-color);
+  --bs-btn-hover-border-color: var(--bs-body-color);
+  --bs-btn-focus-shadow-rgb: var(--bs-body-color-rgb);
+  --bs-btn-active-color: var(--bs-body-bg);
+  --bs-btn-active-bg: var(--bs-body-color);
+  --bs-btn-active-border-color: var(--bs-body-color);
+  --bs-btn-active-shadow: var(--bs-box-shadow-inset);
+  --bs-btn-disabled-color: var(--bs-secondary-color);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: var(--bs-secondary-color);
+  --gradient: none;
+}

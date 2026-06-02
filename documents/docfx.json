@@ -1,0 +1,51 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "disableGitFeatures": true,
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../source/src",
+          "files": ["**/Calm.Core.csproj", "**/Calm.Extensions.DependencyInjection.csproj"]
+        }
+      ],
+      "dest": "api",
+      "filter": "filterConfig.yml"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": ["**/*.{md,yml}"],
+        "exclude": ["_site/**"]
+      }
+    ],
+    "resource": [
+      {
+        "files": ["images/**"]
+      }
+    ],
+    "output": "_site",
+    "template": ["default", "modern", "templates/calm"],
+    "globalMetadata": {
+      "_appName": "CALM",
+      "_appTitle": "CALM",
+      "_appFooter": "<p>© 2026 CALM Project. Documentation licensed under <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>. Code licensed under <a href='https://github.com/nullmake/calm-dotnet/blob/main/LICENSE'>Apache License 2.0</a>.</p>",
+      "_appLogoPath": "images/calm-icon.svg",
+      "_appFaviconPath": "images/calm-icon.svg",
+      "_enableSearch": false,
+      "_noindex": true,
+      "_disableContribution": true,
+      "_disableNewTab": false,
+      "_disableNavbar": false,
+      "_disableBreadcrumb": false,
+      "_disableToc": false,
+      "_disableAffix": false,
+      "_disableNextArticle": false,
+      "_disableTocFilter": false,
+      "_googleAnalyticsTagId": "G-DUMMY",
+      "_lang": "en",
+      "pdf": false
+    }
+  }
+}

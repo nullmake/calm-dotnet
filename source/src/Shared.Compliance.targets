@@ -1,0 +1,58 @@
+<Project>
+  <!-- Add compliance files to NuGet package -->
+  <Target Name="AddComplianceFiles" AfterTargets="Pack" Condition="'$(IsPackable)' == 'true'" >
+    <PropertyGroup>
+      <PackageOutputFullPath>$([System.IO.Path]::GetFullPath('$(PackageOutputPath)'))</PackageOutputFullPath>
+      <NugetPackage>$(PackageOutputFullPath)/$(PackageId).$(PackageVersion).nupkg</NugetPackage>
+      <NugetPackageUnzip>$(PackageOutputFullPath)/$(PackageId).$(PackageVersion).$([System.Guid]::NewGuid().ToString().Substring(0, 8))</NugetPackageUnzip>
+      <ManifestDir>$(NugetPackageUnzip)/_manifest</ManifestDir>
+      <ComplianceDir>$(NugetPackageUnzip)/compliance</ComplianceDir>
+      <ComponentType>Library</ComponentType>
+      <SbomFileName>manifest.cyclonedx.json</SbomFileName>
+      <NoticesFileName>ThirdPartyNotices.html</NoticesFileName>
+    </PropertyGroup>
+
+    <!-- Install CycloneDX dotnet tool -->
+    <Exec Command="dotnet tool install CycloneDX" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" />
+
+    <!-- Unzipping NuGet package: -->
+    <Message Importance="high" Text="Unzipping NuGet package: &quot;$(NugetPackage)&quot; to &quot;$(NugetPackageUnzip)&quot;" />
+    <Microsoft.Build.Tasks.Unzip DestinationFolder="$(NugetPackageUnzip)" SourceFiles="$(NugetPackage)" OverwriteReadOnlyFiles="true" ContinueOnError="ErrorAndContinue" />
+    <Delete Files="$(NugetPackage)" ContinueOnError="ErrorAndContinue" />
+
+    <!-- Generate CycloneDX SBOM -->
+    <Message Importance="high" Text="$(MSBuildProjectName) -> Generate CycloneDX SBOM: @(__TargetFramework, ', ')" />
+    <ItemGroup>
+      <__TargetFramework Include="$(TargetFrameworks);$(TargetFramework)" />
+    </ItemGroup>
+    <Exec Command="dotnet CycloneDX $(MSBuildProjectFullPath) -o $(ManifestDir)/$(MSBuildProjectName)/%(__TargetFramework.Identity) -tfm %(__TargetFramework.Identity) -fn $(SbomFileName) -rs -ed -sv $(PackageVersion) -st $(ComponentType)"
+          StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" />
+
+    <!-- Install SbomToNotice dotnet tool -->
+    <Exec Command="dotnet tool install SbomToNotice" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" />
+
+    <!-- Generate Third-Party Notices -->
+    <Message Importance="high" Text="Creating Third-Party Notices" />
+    <Exec Command="dotnet SbomToNotice $(ManifestDir)/$(MSBuildProjectName)/%(__TargetFramework.Identity)/$(SbomFileName) -o $(ComplianceDir)/$(MSBuildProjectName)/%(__TargetFramework.Identity)/$(NoticesFileName) --ofmt Html"
+          StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" />
+
+    <!-- Add other compliance files to NuGet package -->
+    <MSBuild Projects="$(MSBuildProjectFile)" Targets="HookAfterCreateComplianceFiles" Properties="ManifestDir=$(ManifestDir);ComplianceDir=$(ComplianceDir);SbomFileName=$(SbomFileName);NoticesFileName=$(NoticesFileName);PackageVersion=$(PackageVersion)" />
+
+    <!-- Zipping directory -->
+    <Microsoft.Build.Tasks.ZipDirectory SourceDirectory="$(NugetPackageUnzip)" DestinationFile="$(NugetPackage)" Overwrite="true" ContinueOnError="ErrorAndContinue" />
+    <RemoveDir Directories="$(NugetPackageUnzip)" ContinueOnError="WarnAndContinue" />
+
+    <!-- Error handling -->
+    <OnError ExecuteTargets="AddComplianceFilesErrorCleanup" />
+  </Target>
+
+  <!-- Delete the NuGet package when an error occurs. -->
+  <Target Name="AddComplianceFilesErrorCleanup">
+    <Delete Files="$(NugetPackage)" ContinueOnError="ErrorAndContinue" />
+    <RemoveDir Directories="$(NugetPackageUnzip)" ContinueOnError="WarnAndContinue" />
+  </Target>
+
+  <!-- To add other compliance files, overwrite this target -->
+  <Target Name="HookAfterCreateComplianceFiles" />
+</Project>

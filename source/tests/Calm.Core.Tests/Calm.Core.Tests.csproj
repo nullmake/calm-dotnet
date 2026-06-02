@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../Shared.Test.props" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Calm.Core\Calm.Core.csproj" />
+    <ProjectReference Include="..\..\src\Calm.Analyzers\Calm.Analyzers.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+</Project>

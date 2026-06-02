@@ -1,0 +1,34 @@
+name: NuGet Pack (Calm.Extensions.DependencyInjection)
+
+on:
+  push:
+    tags: ["Calm.Extensions.DependencyInjection/v*"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0 # Important for MinVer to calculate version from tags
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore source/src/Calm.Extensions.DependencyInjection/Calm.Extensions.DependencyInjection.csproj
+
+      - name: Build
+        run: dotnet build source/src/Calm.Extensions.DependencyInjection/Calm.Extensions.DependencyInjection.csproj --configuration Release --no-restore
+
+      - name: Pack
+        run: dotnet pack source/src/Calm.Extensions.DependencyInjection/Calm.Extensions.DependencyInjection.csproj --configuration Release --no-build --output ./nupkg
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Calm.Extensions.DependencyInjection.nupkg
+          path: ./nupkg/*.nupkg

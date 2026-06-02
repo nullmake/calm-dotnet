@@ -1,0 +1,38 @@
+name: Publish Calm.Sample.Winforms
+
+on:
+  # push:
+  #   tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore tools
+        run: dotnet tool restore
+        working-directory: ./samples
+
+      - name: Publish
+        run: dotnet publish Calm.Sample.Winforms.csproj -p:PublishProfile=FolderProfile -f net10.0-windows10.0.19041.0 -p:IsPackable=true
+        working-directory: samples/Calm.Sample.Winforms
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Calm.Sample.Winforms
+          path: |
+            samples/Calm.Sample.Winforms/bin/Release/publish/win-x64/Calm.Sample.Winforms.exe
+            samples/Calm.Sample.Winforms/bin/Release/publish/win-x64/LICENSE
+            samples/Calm.Sample.Winforms/bin/Release/publish/win-x64/manifest.cyclonedx.json
+            samples/Calm.Sample.Winforms/bin/Release/publish/win-x64/ThirdPartyNotices.html

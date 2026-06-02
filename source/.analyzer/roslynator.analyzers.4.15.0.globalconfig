@@ -1,0 +1,1735 @@
+# roslynator.analyzers\4.15.0
+
+# Top level entry required to mark this as a global AnalyzerConfig file
+is_global = true
+
+#------------|------------------------------------------------------------------------------------------------------------------
+# Severity   | Build-time behavior
+#------------|------------------------------------------------------------------------------------------------------------------
+# error      | Violations appear as build errors and cause builds to fail.
+#------------|------------------------------------------------------------------------------------------------------------------
+# warning    | Violations appear as build warnings but do not cause builds to fail
+#            | (unless you have an option set to treat warnings as errors).
+#------------|------------------------------------------------------------------------------------------------------------------
+# suggestion | Violations appear as build messages and as suggestions in the Visual Studio IDE.
+#            | (In Visual Studio, suggestions appear as three gray dots under the first two characters.)
+#------------|------------------------------------------------------------------------------------------------------------------
+# silent     | Violations aren't visible to the user.
+#            | However, for code-style rules, Visual Studio code-generation features still generate code in this style.
+#            | These rules also participate in cleanup and appear in the Quick Actions and Refactorings menu in Visual Studio.
+#------------|------------------------------------------------------------------------------------------------------------------
+# none       | Rule is suppressed completely.
+#            | However, for code-style rules, Visual Studio code-generation features still generate code in this style.
+#------------|------------------------------------------------------------------------------------------------------------------
+# default    | The default severity of the rule is used.
+#            | The default severities for each .NET release are listed in the dotnet/sdk repo. In that table,
+#            | "Disabled" corresponds to none, "Hidden" corresponds to silent, and "Info" corresponds to suggestion.
+#------------|------------------------------------------------------------------------------------------------------------------
+
+# [SuppressMessage("Roslynator", "RCS1001:Add braces (when expression spans over multiple lines)", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1001.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1002:Remove braces", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1002.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1002FadeOut:Remove braces", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1002FadeOut.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1003:Add braces to if-else (when expression spans over multiple lines)", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1003.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1004:Remove braces from if-else", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1004.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1004FadeOut:Remove braces from if-else", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1004FadeOut.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1005:Simplify nested using statement", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1005.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1005FadeOut:Simplify nested using statement", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1005FadeOut.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1006:Merge 'else' with nested 'if'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1006.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1006FadeOut:Merge 'else' with nested 'if'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1006FadeOut.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1007:Add braces", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1007.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1008:[deprecated] Use explicit type instead of 'var' (when the type is not obvious)", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1008.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1009:[deprecated] Use explicit type instead of 'var' (foreach variable)", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1009.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1010:[deprecated] Use 'var' instead of explicit type (when the type is obvious)", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1010.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1012:[deprecated] Use explicit type instead of 'var' (when the type is obvious)", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1012.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1013:Use predefined type", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1013.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1014:Use explicitly/implicitly typed array", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1014.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1015:Use nameof operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1015.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1015FadeOut:Use nameof operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1015FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1016:Use block body or expression body", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1016.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1018:Add/remove accessibility modifiers", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1018.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1019:Order modifiers", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1019.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1020:Simplify Nullable<T> to T?", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1020.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1021:Convert lambda expression body to expression body", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1021.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1021FadeOut:Convert lambda expression body to expression body", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1021FadeOut.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1031:Remove unnecessary braces in switch section", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1031.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1031FadeOut:Remove unnecessary braces in switch section", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1031FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1032:Remove redundant parentheses", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1032.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1032FadeOut:Remove redundant parentheses", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1032FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1033:Remove redundant boolean literal", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1033.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1034:Remove redundant 'sealed' modifier", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1034.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1035:[deprecated] Remove redundant comma in initializer", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1035.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1036:[deprecated] Remove unnecessary blank line", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1036.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1037:Remove trailing white-space", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1037.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1038:[deprecated] Remove empty statement", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1038.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1039:Remove argument list from attribute", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1039.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1040:[deprecated] Remove empty 'else' clause", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1040.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1041:[deprecated] Remove empty initializer", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1041.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1042:Remove enum default underlying type", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1042.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1043:Remove 'partial' modifier from type with a single part", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1043.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1044:Remove original exception from throw statement", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1044.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1046:Asynchronous method name should end with 'Async'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1046.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1047:Non-asynchronous method name should not end with 'Async'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1047.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1047FadeOut:Non-asynchronous method name should not end with 'Async'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1047FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1048:Use lambda expression instead of anonymous method", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1048.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1048FadeOut:Use lambda expression instead of anonymous method", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1048FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1049:Simplify boolean comparison", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1049.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1049FadeOut:Simplify boolean comparison", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1049FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1050:Include/omit parentheses when creating new object", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1050.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1051:Add/remove parentheses from condition in conditional operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1051.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1052:Declare each attribute separately", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1052.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1055:Unnecessary semicolon at the end of declaration", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1055.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1056:Avoid usage of using alias directive", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1056.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1058:Use compound assignment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1058.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1058FadeOut:Use compound assignment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1058FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1059:Avoid locking on publicly accessible instance", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1059.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1060:Declare each type in separate file", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1060.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1061:Merge 'if' with nested 'if'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1061.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1061FadeOut:Merge 'if' with nested 'if'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1061FadeOut.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1063:[deprecated] Avoid usage of do statement to create an infinite loop", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1063.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1064:[deprecated] Avoid usage of for statement to create an infinite loop", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1064.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1065:[deprecated] Avoid usage of while statement to create an infinite loop", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1065.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1066:[deprecated] Remove empty 'finally' clause", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1066.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1066FadeOut:[deprecated] Remove empty 'finally' clause", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1066FadeOut.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1068:Simplify logical negation", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1068.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1069:Remove unnecessary case label", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1069.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1070:Remove redundant default switch section", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1070.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1071:Remove redundant base constructor call", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1071.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1072:[deprecated] Remove empty namespace declaration", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1072.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1073:Convert 'if' to 'return' statement", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1073.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1073FadeOut:Convert 'if' to 'return' statement", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1073FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1074:Remove redundant constructor", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1074.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1075:Avoid empty catch clause that catches System.Exception", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1075.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1077:Optimize LINQ method call", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1077.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1078:Use "" or 'string.Empty'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1078.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1079:Throwing of new NotImplementedException", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1079.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1080:Use 'Count/Length' property instead of 'Any' method", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1080.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1081:Split variable declaration", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1081.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1084:Use coalesce expression instead of conditional expression", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1084.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1085:Use auto-implemented property", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1085.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1085FadeOut:Use auto-implemented property", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1085FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1089:Use --/++ operator instead of assignment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1089.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1089FadeOut:Use --/++ operator instead of assignment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1089FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1090:Add/remove 'ConfigureAwait(false)' call", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1090.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1091:[deprecated] Remove empty region", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1091.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1091FadeOut:[deprecated] Remove empty region", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1091FadeOut.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1093:File contains no code", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1093.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1094:Declare using directive on top level", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1094.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1096:Use 'HasFlag' method or bitwise operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1096.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1097:Remove redundant 'ToString' call", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1097.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1098:Constant values should be placed on right side of comparisons", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1098.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1099:Default label should be the last label in a switch section", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1099.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1100:[deprecated] Format documentation summary on a single line", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1100.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1101:[deprecated] Format documentation summary on multiple lines", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1101.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1102:Make class static", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1102.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1103:Convert 'if' to assignment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1103.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1104:Simplify conditional expression", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1104.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1105:Unnecessary interpolation", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1105.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1106:[deprecated] Remove empty destructor", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1106.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1107:Remove redundant 'ToCharArray' call", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1107.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1108:Add 'static' modifier to all partial class declarations", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1108.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1110:Declare type inside namespace", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1110.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1111:Add braces to switch section with multiple statements", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1111.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1112:Combine 'Enumerable.Where' method chain", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1112.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1112FadeOut:Combine 'Enumerable.Where' method chain", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1112FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1113:Use 'string.IsNullOrEmpty' method", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1113.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1114:Remove redundant delegate creation", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1114.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1114FadeOut:Remove redundant delegate creation", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1114FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1118:Mark local variable as const", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1118.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1123:Add parentheses when necessary", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1123.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1124:Inline local variable", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1124.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1124FadeOut:Inline local variable", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1124FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1126:Add braces to if-else", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1126.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1128:Use coalesce expression", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1128.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1129:Remove redundant field initialization", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1129.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1130:Bitwise operation on enum without Flags attribute", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1130.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1132:Remove redundant overriding member", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1132.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1133:Remove redundant Dispose/Close call", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1133.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1134:Remove redundant statement", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1134.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1135:Declare enum member with zero value (when enum has FlagsAttribute)", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1135.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1136:Merge switch sections with equivalent content", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1136.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1138:Add summary to documentation comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1138.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1139:Add summary element to documentation comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1139.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1140:Add exception to documentation comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1140.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1141:Add 'param' element to documentation comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1141.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1142:Add 'typeparam' element to documentation comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1142.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1143:Simplify coalesce expression", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1143.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1145:Remove redundant 'as' operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1145.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1146:Use conditional access", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1146.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1151:Remove redundant cast", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1151.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1154:Sort enum members", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1154.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1155:Use StringComparison when comparing strings", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1155.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1156:Use string.Length instead of comparison with empty string", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1156.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1157:Composite enum value contains undefined flag", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1157.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1158:Static member in generic type should use a type parameter", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1158.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1159:Use EventHandler<T>", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1159.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1160:Abstract type should not have public constructors", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1160.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1161:Enum should declare explicit values", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1161.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1162:Avoid chain of assignments", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1162.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1163:Unused parameter", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1163.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1164:Unused type parameter", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1164.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1165:Unconstrained type parameter checked for null", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1165.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1166:Value type object is never equal to null", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1166.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1168:Parameter name differs from base name", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1168.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1169:Make field read-only", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1169.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1170:Use read-only auto-implemented property", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1170.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1171:Simplify lazy initialization", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1171.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1172:Use 'is' operator instead of 'as' operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1172.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1173:Use coalesce expression instead of 'if'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1173.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1174:Remove redundant async/await", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1174.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1174FadeOut:Remove redundant async/await", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1174FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1175:Unused 'this' parameter", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1175.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1176:[deprecated] Use 'var' instead of explicit type (when the type is not obvious)", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1176.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1177:[deprecated] Use 'var' instead of explicit type (in foreach)", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1177.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1179:Unnecessary assignment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1179.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1180:Inline lazy initialization", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1180.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1181:Convert comment to documentation comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1181.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1182:Remove redundant base interface", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1182.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1186:Use Regex instance instead of static method", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1186.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1187:Use constant instead of field", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1187.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1188:Remove redundant auto-property initialization", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1188.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1189:Add or remove region name", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1189.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1190:Join string expressions", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1190.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1191:Declare enum value as combination of names", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1191.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1192:Unnecessary usage of verbatim string literal", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1192.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1193:Overriding member should not change 'params' modifier", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1193.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1194:Implement exception constructors", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1194.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1195:Use ^ operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1195.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1196:Call extension method as instance method", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1196.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1197:Optimize StringBuilder.Append/AppendLine call", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1197.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1198:Avoid unnecessary boxing of value type", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1198.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1199:Unnecessary null check", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1199.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1200:Call 'Enumerable.ThenBy' instead of 'Enumerable.OrderBy'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1200.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1201:Use method chaining", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1201.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1202:Avoid NullReferenceException", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1202.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1203:Use AttributeUsageAttribute", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1203.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1204:Use EventArgs.Empty", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1204.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1205:Order named arguments according to the order of parameters", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1205.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1206:Use conditional access instead of conditional expression", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1206.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1207:Use anonymous function or method group", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1207.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1208:Reduce 'if' nesting", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1208.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1209:Order type parameter constraints", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1209.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1210:Return completed task instead of returning null", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1210.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1211:Remove unnecessary 'else'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1211.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1212:Remove redundant assignment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1212.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1212FadeOut:Remove redundant assignment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1212FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1213:Remove unused member declaration", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1213.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1214:Unnecessary interpolated string", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1214.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1214FadeOut:Unnecessary interpolated string", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1214FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1215:Expression is always equal to true/false", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1215.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1216:Unnecessary unsafe context", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1216.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1217:Convert interpolated string to concatenation", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1217.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1217FadeOut:Convert interpolated string to concatenation", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary", "NotConfigurable"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1217FadeOut.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1218:Simplify code branching", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1218.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1220:Use pattern matching instead of combination of 'is' operator and cast operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1220.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1221:Use pattern matching instead of combination of 'as' operator and null check", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1221.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1222:Merge preprocessor directives", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1222.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1223:Mark publicly visible type with DebuggerDisplay attribute", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1223.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1224:Make method an extension method", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1224.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1225:Make class sealed", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1225.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1226:Add paragraph to documentation comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1226.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1227:Validate arguments correctly", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1227.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1228:Unused element in a documentation comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1228.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1229:Use async/await when necessary", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1229.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1230:Unnecessary explicit use of enumerator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1230.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1231:Make parameter ref read-only", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1231.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1232:Order elements in documentation comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1232.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1233:Use short-circuiting operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1233.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1234:Duplicate enum value", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1234.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1235:Optimize method call", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1235.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1236:Use exception filter", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1236.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1237:[deprecated] Use bit shift operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1237.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1238:Avoid nested ?: operators", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1238.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1239:Use 'for' statement instead of 'while' statement", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1239.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1240:Operator is unnecessary", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1240.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1241:Implement non-generic counterpart", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1241.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1242:Do not pass non-read-only struct by read-only reference", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1242.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1243:Duplicate word in a comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1243.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1244:Simplify 'default' expression", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=silent }
+dotnet_diagnostic.RCS1244.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1246:Use element access", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1246.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1247:Fix documentation comment tag", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1247.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1248:Normalize null check", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1248.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1249:Unnecessary null-forgiving operator", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1249.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1250:Use implicit/explicit object creation", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1250.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1251:Remove unnecessary braces from record declaration", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1251.severity = none
+
+# [SuppressMessage("Roslynator", "RCS1252:Normalize usage of infinite loop", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1252.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1253:Format documentation comment summary", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1253.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1254:Normalize format of enum flag value", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1254.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1255:Simplify argument null check", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1255.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1256:Invalid argument null check", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1256.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1257:Use enum field explicitly", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1257.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1258:Unnecessary enum flag", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1258.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1259:Remove empty syntax", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1259.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1260:Add/remove trailing comma", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1260.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1261:Resource can be disposed asynchronously", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1261.severity = silent
+
+# [SuppressMessage("Roslynator", "RCS1262:Unnecessary raw string literal", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: ["Unnecessary"]
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1262.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1263:Invalid reference in a documentation comment", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=warning }
+dotnet_diagnostic.RCS1263.severity = warning
+
+# [SuppressMessage("Roslynator", "RCS1264:Use 'var' or explicit type", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.RCS1264.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1265:Remove redundant catch block", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1265.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1266:Use raw string literal", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1266.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1267:Use string interpolation instead of 'string.Concat'", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1267.severity = suggestion
+
+# [SuppressMessage("Roslynator", "RCS1268:Simplify numeric comparison", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.RCS1268.severity = suggestion
+
+# [SuppressMessage("", "ROS0003:Analyzer requires config option to be specified", Justification = "<Pending>")]
+# analyzer: Roslynator.CSharp.Analyzers, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=False, severity=none }
+dotnet_diagnostic.ROS0003.severity = none
+
+# [SuppressMessage("FindSymbols", "Roslynator.FindSymbols.FindSymbolAnalyzer:(none)", Justification = "<Pending>")]
+# analyzer: Roslynator_Analyzers_Roslynator.Workspaces.Core, Version=4.15.0.0, Culture=neutral, PublicKeyToken=926ea54d246a765e
+# description: (none)
+# custom tags: []
+# default: { enabled=True, severity=suggestion }
+dotnet_diagnostic.Roslynator.FindSymbols.FindSymbolAnalyzer.severity = suggestion

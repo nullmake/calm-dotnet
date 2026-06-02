@@ -1,0 +1,4 @@
+### YamlMime:ManagedReference
+attributeRules:
+  - exclude:
+      uidRegex: ^System\.Diagnostics\.CodeAnalysis\.SuppressMessageAttribute$

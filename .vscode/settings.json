@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false,
+    "editor.wordWrapColumn": 96,
+    "editor.wordWrap": "bounded",
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  }
+}

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>615e5e1b-dfb8-4f9d-8a45-982bd9a421aa</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Polyfills</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ArgumentNullExceptionThrowIfNull.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CallerArgumentExpressionAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IsExternalInit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaybeNullWhenAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NotNullAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NotNullWhenAttribute.cs" />
+  </ItemGroup>
+</Project>

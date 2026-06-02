@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../Shared.Test.props" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Calm.Core\Calm.Core.csproj" />
+    <ProjectReference Include="..\..\src\Calm.Extensions.DependencyInjection\Calm.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\src\Calm.Analyzers\Calm.Analyzers.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.2" />
+  </ItemGroup>
+</Project>

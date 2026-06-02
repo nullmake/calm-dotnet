@@ -1,0 +1,159 @@
+<div class="container">
+  <section class="text-center py-5">
+    <div class="container">
+      <div class="logo-container mt-4">
+        <img
+          class="img-light"
+          src="images/calm-logo-light.svg"
+          alt="CALM"
+          style="width: min(100%, 36rem); height: auto"
+        />
+        <img
+          class="img-dark"
+          src="images/calm-logo-dark.svg"
+          alt="CALM"
+          style="width: min(100%, 36rem); height: auto"
+        />
+      </div>
+      <p class="lead mt-3 mb-4">A lock-free, single-thread messaging library for .NET.</p>
+      <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+        <a href="documentation/Quickstart.html" class="btn btn-primary btn-lg">
+          <i class="bi bi-rocket-takeoff"></i>
+          Get started
+        </a>
+        <a href="https://www.nuget.org/packages/Calm.Core" class="btn btn-outline-theme btn-lg">
+          <i class="bi bi-download"></i>
+          Download
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-3">
+    <div class="card">
+      <div class="card-header fs-3">
+        <i class="bi bi-cpu"></i>
+        lightweight Thread-Safe Concurrency Framework
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          CALM is a high-performance execution engine built on a single-thread message pump
+          (CalmPump) using `System.Threading.Channels`. It structurally eliminates Race Conditions,
+          Deadlocks, and `this`-reference leaks in multi-threaded programming.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="container my-3">
+    <div class="card">
+      <div class="card-header fs-3">
+        <i class="bi bi-lightbulb"></i>
+        Challenges Solved by CALM
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          Traditional multi-threaded lock control and thread-pool-dependent asynchronous processing
+          often lead to code complexity and debugging difficulties. CALM adopts a structure similar
+          to the Actor model, where a single dedicated thread processes all tasks in sequence,
+          simplifying the construction of thread-safe applications.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="container my-3">
+    <div class="card">
+      <div class="card-header fs-3">
+        <i class="bi bi-gear-wide-connected"></i>
+        Key Core Features
+      </div>
+      <div class="card-body">
+        <ul class="card-text">
+          <li>
+            <span class="fw-medium">CalmPump (Message Pump):</span>
+            Channel-based single-thread execution engine.
+          </li>
+          <li>
+            <span class="fw-medium">Role-based Messaging:</span>
+            Clear separation of roles for Commands, Queries, and Events.
+          </li>
+          <li>
+            <span class="fw-medium">Atomic Outbox (Unit of Work):</span>
+            Atomic event publishing upon successful command execution.
+          </li>
+          <li>
+            <span class="fw-medium">Resource Efficiency:</span>
+            Minimizes thread pool consumption and prevents starvation.
+          </li>
+          <li>
+            <span class="fw-medium">Watchdog (Stall Detection):</span>
+            Automatic detection of tasks monopolizing the thread.
+          </li>
+          <li>
+            <span class="fw-medium">OpenTelemetry Integration:</span>
+            Native support for performance and health monitoring.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="container my-3">
+    <div class="card">
+      <div class="card-header fs-3">
+        <i class="bi bi-rocket-takeoff"></i>
+        Start Learning
+      </div>
+      <div class="card-body">
+        <table class="card-text">
+          <thead>
+            <tr>
+              <th>Learning Objective</th>
+              <th>Documentation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Get up and running quickly</td>
+              <td><a href="documentation/Quickstart.html">Quickstart Guide</a></td>
+            </tr>
+            <tr>
+              <td>Learn engine basics</td>
+              <td><a href="documentation/Engine-Usage.html">Operations & Thread Control</a></td>
+            </tr>
+            <tr>
+              <td>Implement messaging</td>
+              <td><a href="documentation/Usage-Messaging.html">Role-based Messaging</a></td>
+            </tr>
+            <tr>
+              <td>Leverage Dependency Injection</td>
+              <td>
+                <a
+                  href="documentation/Usage-Messaging.html#5-integration-with-dependency-injection-di"
+                >
+                  DI Integration Guide
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Integrate with GUI</td>
+              <td><a href="documentation/Usage-GUI.html">GUI Application Integration</a></td>
+            </tr>
+            <tr>
+              <td>Customize configuration</td>
+              <td><a href="documentation/Configuration.html">Configuration Properties</a></td>
+            </tr>
+            <tr>
+              <td>Learn error handling</td>
+              <td><a href="documentation/Diagnostics.html">Diagnostics & Exceptions</a></td>
+            </tr>
+            <tr>
+              <td>Deep dive into architecture</td>
+              <td>
+                <a href="documentation/Architecture-Concepts.html">Architecture & Concepts</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
