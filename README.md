@@ -7,13 +7,23 @@
 
 CALM (**C**ooperative **A**sync **L**ock-free **M**essaging) is a high-performance, lightweight execution engine for .NET designed to simplify concurrent programming.
 
-By ensuring single-threaded execution within a dedicated context, CALM structurally eliminates common concurrency pitfalls such as **race conditions**, **deadlocks**, and **`this` reference leaks**. It provides a "Calm" development experience where you can focus on business logic using standard `Task`-based code without worrying about thread safety.
+## 💡 Motivation
+
+Standard `async/await` in C# is powerful, but it doesn't automatically prevent deadlocks or race conditions. These bugs are notoriously hard to reproduce and debug. 
+
+Previously, I tried to solve this by running `yield return` coroutines on a single thread. While it ensured thread safety, it hit two major walls:
+1. **Structural limitations**: `try/catch` blocks didn't work across yield points.
+2. **Concurrency limitations**: It couldn't efficiently handle IO-bound work concurrently (interleaving).
+
+**CALM solves these challenges** by running standard `async` methods on a single dedicated message pump.
+- **Lock-free Safety**: By serializing all execution, it eliminates race conditions and deadlocks.
+- **Resource Efficient**: No thread pool churn; no need for complex semaphore management to limit resource contention.
+- **Predictable**: It provides a "Calm" development experience where you focus on logic, not synchronization.
 
 ## 🚀 Key Features
 
 - **Guaranteed Single-Threading**: All operations within an engine instance are serialized, providing an actor-like thread-safety model.
 - **Resource Efficiency**: Minimizes thread pool consumption by processing all tasks on a single dedicated thread, preventing thread pool starvation even under high task volumes.
-- **Structural Safety**: Designed to prevent `this` reference leaks during registration by enforcing a "Construction-First, Connection-Second" protocol.
 - **Deadlock Elimination**: By serializing all tasks through a high-performance `Channel`-based message pump, it removes the need for traditional locks.
 - **Role-based Messaging**: Built-in support for Commands, Queries, and Events with a simple, attribute-based handler discovery.
 - **DI Ready**: Seamlessly integrates with `Microsoft.Extensions.DependencyInjection` and supports automatic handler registration from assemblies.

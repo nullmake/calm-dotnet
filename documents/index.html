@@ -38,8 +38,8 @@
       <div class="card-body">
         <p class="card-text">
           CALM is a high-performance execution engine built on a single-thread message pump
-          (CalmPump) using `System.Threading.Channels`. It structurally eliminates Race Conditions,
-          Deadlocks, and `this`-reference leaks in multi-threaded programming.
+          (CalmPump) using `System.Threading.Channels`. It structurally eliminates Race Conditions
+          and Deadlocks in multi-threaded programming.
         </p>
       </div>
     </div>
@@ -48,15 +48,29 @@
     <div class="card">
       <div class="card-header fs-3">
         <i class="bi bi-lightbulb"></i>
-        Challenges Solved by CALM
+        Motivation: Why CALM?
       </div>
       <div class="card-body">
         <p class="card-text">
-          Traditional multi-threaded lock control and thread-pool-dependent asynchronous processing
-          often lead to code complexity and debugging difficulties. CALM adopts a structure similar
-          to the Actor model, where a single dedicated thread processes all tasks in sequence,
-          simplifying the construction of thread-safe applications.
+          Standard <code>async/await</code> in C# is powerful, but it doesn't automatically prevent
+          deadlocks or race conditions. These bugs are notoriously hard to reproduce and debug.
         </p>
+        <p class="card-text">
+          CALM was born from the struggle of managing shared state in complex async applications.
+          Previously, we tried solving this using a single-threaded coroutine approach with
+          <code>yield return</code>. While it ensured thread safety, it lacked support for
+          efficient IO-bound interleaving and standard <code>try/catch</code> blocks across yield
+          points.
+        </p>
+        <p class="card-text">
+          CALM solves these challenges by running standard <code>async</code> methods on a dedicated
+          single-threaded message pump. This approach provides:
+        </p>
+        <ul>
+          <li><strong>Lock-free Safety:</strong> Serialized execution eliminates race conditions.</li>
+          <li><strong>Resource Efficiency:</strong> No thread pool churn or semaphore management.</li>
+          <li><strong>Simplicity:</strong> Focus on business logic using standard async C# code.</li>
+        </ul>
       </div>
     </div>
   </section>
