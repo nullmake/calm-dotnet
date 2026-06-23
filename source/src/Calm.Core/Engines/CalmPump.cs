@@ -880,6 +880,7 @@ internal sealed partial class CalmPump : ICalmPump, ICalmScheduler,
                 "Scheduling task for execution.", metadata);
 
             using var cts = CancellationTokenSource.CreateLinkedTokenSource(_shutdownCts.Token, token);
+            Exception? thrownException = null;
             try
             {
                 // Ensure that scheduled tasks do not inherit the Unit of Work state
@@ -890,8 +891,21 @@ internal sealed partial class CalmPump : ICalmPump, ICalmScheduler,
                 await funcAsync(cts.Token).ConfigureAwait(true);
                 operation.CompletedTaskCompletionSource.SetResult(true);
             }
+            catch (Exception ex)
+            {
+                thrownException = ex;
+                throw;
+            }
             finally
             {
+                // If the task threw an exception, propagate it to the CompletedTaskCompletionSource
+                // so that any awaiter does not hang indefinitely.
+                if (thrownException is not null
+                    && !operation.CompletedTaskCompletionSource.Task.IsCompleted)
+                {
+                    operation.CompletedTaskCompletionSource.SetException(thrownException);
+                }
+
                 Interlocked.Decrement(ref _activeOperationsCount);
                 _logger?.ActiveCountAndReaderCountAndTaskInfo(LogLevel.Trace,
                     "Finished executing scheduled task.", metadata);

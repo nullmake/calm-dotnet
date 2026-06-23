@@ -450,4 +450,72 @@ public class CalmPumpTests() : TestBase(LogLevel.Trace)
         mock.Verify(x => x.OnUnhandledException(It.IsAny<Exception>()), Times.Never);
         mock.Verify(x => x.OnContextLeaked(), Times.Never);
     }
+
+    /// <summary>
+    /// Verifies that ExecuteWithContextAsync preserves CalmContext.
+    /// CurrentTask across await points (fixes AsyncLocal leakage).
+    /// </summary>
+    /// <returns>A task representing the asynchronous operation.</returns>
+    [Fact]
+    public async Task ExecuteAsync_WithContextAsyncLocalLeak_Reproduce()
+    {
+        var mock = new Mock<ICalmErrorObserver>();
+        await using (var engine = CreateCalmEngine(mock))
+        {
+            engine.Start();
+            CalmTaskInfo? contextBeforeAwait = null;
+            CalmTaskInfo? contextAfterAwait = null;
+
+            await engine.ExecuteAsync(async _ =>
+            {
+                contextBeforeAwait = CalmContext.CurrentTask;
+                await Task.Yield(); // Forces continuation segment
+                contextAfterAwait = CalmContext.CurrentTask;
+            }, TestContext.Current.CancellationToken);
+
+            Assert.NotNull(contextBeforeAwait);
+            Assert.NotNull(contextAfterAwait);
+            Assert.Equal(contextBeforeAwait.Id, contextAfterAwait.Id);
+        }
+        mock.Verify(x => x.OnUnhandledException(It.IsAny<Exception>()), Times.Never);
+        mock.Verify(x => x.OnContextLeaked(), Times.Never);
+    }
+
+    /// <summary>
+    /// Verifies that ScheduleOperation.CompletedAwaitable completes
+    /// (propagating the exception) when an exception occurs inside the task.
+    /// </summary>
+    /// <returns>A task representing the asynchronous operation.</returns>
+    [Fact]
+    public async Task Schedule_ExceptionDoesNotCompleteAwaitable_Reproduce()
+    {
+        var mock = new Mock<ICalmErrorObserver>();
+        await using (var engine = CreateCalmEngine(mock))
+        {
+            engine.Start();
+
+            // Act
+            var operation = engine.Schedule(
+                _ => throw new InvalidOperationException("Test exception"),
+                TestContext.Current.CancellationToken);
+
+            // Assert
+            // We expect the await on CompletedAwaitable to throw the exception.
+            // If the bug is present, it will hang indefinitely, so we use a timeout of 2 seconds to fail fast.
+            var awaitTask = Task.Run(async () => await operation.CompletedAwaitable, TestContext.Current.CancellationToken);
+            var completed = await Task.WhenAny(awaitTask, Task.Delay(2000, TestContext.Current.CancellationToken));
+
+            if (completed == awaitTask)
+            {
+                var exception = await Assert.ThrowsAsync<InvalidOperationException>(async () => await awaitTask);
+                Assert.Equal("Test exception", exception.Message);
+            }
+            else
+            {
+                Assert.Fail("CompletedAwaitable hung and timed out because the exception was not propagated.");
+            }
+        }
+        mock.Verify(x => x.OnUnhandledException(It.IsAny<InvalidOperationException>()), Times.Once);
+        mock.Verify(x => x.OnContextLeaked(), Times.Never);
+    }
 }
