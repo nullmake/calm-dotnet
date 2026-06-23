@@ -1,3 +1,8 @@
+---
+title: Configuration Properties - CALM
+description: Reference guide for configuring CALM, including key options like capacity and watchdog threshold, and how to apply them directly or via dependency injection.
+---
+
 # Configuration Properties
 
 List of configuration properties for customizing CALM's behavior.

@@ -1,3 +1,8 @@
+---
+title: Role-based Messaging - CALM
+description: Comprehensive guide to defining messages (Commands, Queries, Events) and registering handlers within the CALM messaging system.
+---
+
 # Role-based Messaging
 
 Learn the practical usage of the CALM messaging system (CalmBus), a core component of CALM.

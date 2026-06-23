@@ -1,3 +1,8 @@
+---
+title: GUI Application Integration - CALM
+description: Learn how to integrate CALM with WPF and Windows Forms GUI applications, handle thread synchronization, and manage handler lifecycles.
+---
+
 # GUI Application Integration
 
 This section explains implementing patterns and precautions when using CALM in GUI applications such as WPF or Windows Forms.

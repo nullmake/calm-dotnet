@@ -1,3 +1,8 @@
+---
+title: Diagnostics & Exceptions - CALM
+description: Guide to diagnostics, logging levels, OpenTelemetry metrics, exception hierarchy, and implementing the ICalmErrorObserver in CALM.
+---
+
 # Diagnostics & Exceptions
 
 This section explains the exception hierarchy in CALM and diagnostic methods through the implementation of an error observer.

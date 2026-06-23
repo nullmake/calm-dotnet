@@ -1,3 +1,8 @@
+---
+title: Architecture & Concepts - CALM
+description: Explore the technical architecture, single-threaded message pump design, thread affinity, and atomic outbox execution model behind CALM.
+---
+
 # Architecture & Concepts
 
 This section explains the concurrent design patterns and technical implementation behind CALM.

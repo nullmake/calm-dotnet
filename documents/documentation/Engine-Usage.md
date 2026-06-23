@@ -1,3 +1,8 @@
+---
+title: Engine Operations & Thread Control - CALM
+description: Master task execution, scheduling, thread affinity, and thread switching via SwitchAsync inside the CALM execution engine.
+---
+
 # Engine Operations & Thread Control
 
 This section explains how to operate the `ICalm` interface, the core of the CALM engine, and the important rules for maintaining thread safety.

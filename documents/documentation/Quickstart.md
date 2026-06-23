@@ -1,3 +1,8 @@
+---
+title: Quickstart Guide - CALM
+description: Get started with CALM in minutes. Learn how to install the package, initialize the engine, and safely execute your first concurrent task.
+---
+
 # Quickstart Guide
 
 This guide describes the steps to introduce CALM into your project and safely launch your first single-threaded task.
