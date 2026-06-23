@@ -14,6 +14,9 @@
     }
   ],
   "build": {
+    "sitemap": {
+      "baseUrl": "https://nullmake.github.io/calm-dotnet/"
+    },
     "content": [
       {
         "files": ["**/*.{md,yml}"],
