@@ -1231,10 +1231,7 @@ internal sealed partial class CalmPump : ICalmPump, ICalmScheduler,
             }
         }
 
-        return calmTask with
-        {
-            OnExecuteAsync = WrappedOnExecuteAsync,
-        };
+        return new CalmTask(WrappedOnExecuteAsync, calmTask.Metadata);
     }
 
     /// <summary>
