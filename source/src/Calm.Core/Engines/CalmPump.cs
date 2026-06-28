@@ -1158,6 +1158,9 @@ internal sealed partial class CalmPump : ICalmPump, ICalmScheduler,
     /// <param name="calmTask">The task to enqueue for execution.</param>
     /// <param name="isCapacityReserved">Indicates whether a slot in the logical queue was reserved
     /// for this task.</param>
+    /// <exception cref="CalmEngineStoppingException">
+    /// Thrown when the channel is closed because the engine is stopping and the task could not be enqueued.
+    /// </exception>
     private void WriteChannel(CalmTask calmTask, bool isCapacityReserved)
     {
         // Decorate the task with the current execution and activity context.
@@ -1170,10 +1173,13 @@ internal sealed partial class CalmPump : ICalmPump, ICalmScheduler,
         }
         else
         {
+            // The channel is closed (engine is stopping). Release the reserved capacity
+            // slot if applicable, and notify the caller that the task was not enqueued.
             if (isCapacityReserved)
             {
                 _capacitySemaphore.Release();
             }
+            throw new CalmEngineStoppingException();
         }
     }
 
