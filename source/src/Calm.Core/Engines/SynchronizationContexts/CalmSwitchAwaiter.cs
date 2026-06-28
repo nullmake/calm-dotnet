@@ -36,7 +36,8 @@ public readonly struct CalmSwitchAwaiter(ICalmPump pump) : INotifyCompletion, IE
     {
         if (_pump is ICalmSynchronizationContextDispatcher dispatcher)
         {
-            dispatcher.Post(_ => continuation(), new object());
+            // Pass the continuation directly as state to avoid closure and dummy object allocations.
+            dispatcher.Post(static s => ((Action)s!)(), continuation);
         }
         else
         {
